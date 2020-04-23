@@ -16,7 +16,7 @@
 struct Course {
     size_t id;
     String name;
-    short unsigned type;
+    bool optional;
 };
 
 #endif /* course_hpp */

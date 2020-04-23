@@ -13,6 +13,8 @@
 #include <fstream>
 
 #include "string.hpp"
+#include "courses.hpp"
+#include "enrolleesInCourses.hpp"
 
 class CoursesInPrograms {
     const static String file;
@@ -20,11 +22,12 @@ class CoursesInPrograms {
     struct CourseInProgram {
         size_t courseID;
         size_t programID;
+        short unsigned year;
     };
     
     size_t size;
     size_t capacity;
-    CourseInProgram* courseInProgram;
+    CourseInProgram* coursesInPrograms;
     
     void resize(const size_t newCapacity);
     
@@ -32,9 +35,11 @@ public:
     CoursesInPrograms();
     ~CoursesInPrograms();
     
-    void add(const size_t courseID, const size_t programID);
+    void add(const size_t courseID, const size_t programID, const short unsigned year);
     
     void save();
+    
+    void addCoursesForYear(const unsigned int fn, const size_t programID, const unsigned short yaer, EnrolleesInCourses& allEnrollees, const Courses& allCourses);
 };
 
 #endif /* coursesInPrograms_hpp */

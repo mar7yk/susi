@@ -54,9 +54,9 @@ public:
     
     void addProgram(const String& name);
     
-    void addCourse(const String& name, const unsigned short type);
+    void addCourse(const String& name, const bool optional);
     
-    void addCourseToProgram(const String& courseName, const String& programName);
+    void addCourseToProgram(const String& courseName, const String& programName, const short unsigned year);
 };
 
 #endif /* susiDatabase_hpp */

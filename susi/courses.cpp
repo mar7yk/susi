@@ -20,7 +20,7 @@ Courses::Courses() {
         courses = new Course[capacity];
         for (size_t i = 0; i < size; ++i) {
             is.read((char*)&courses[i].id, sizeof(size_t));
-            is.read((char*)&courses[i].type, sizeof(short unsigned));
+            is.read((char*)&courses[i].optional, sizeof(bool));
             getline(is, courses[i].name);
         }
         newID = courses[size - 1].id + 1;
@@ -36,11 +36,11 @@ Courses::~Courses() {
     delete [] courses;
 }
 
-void Courses::add(const String &name, const unsigned short type) {
+void Courses::add(const String &name, const bool optional) {
     if (size == capacity) {
         resize(capacity + 5);
     }
-    courses[size] = {newID, name, type};
+    courses[size] = {newID, name, optional};
     ++newID;
     ++size;
 }
@@ -81,7 +81,7 @@ void Courses::save() {
         
         for (unsigned i = 0; i < size; ++i) {
             os.write((char*)&courses[i].id, sizeof(size_t));
-            os.write((char*)&courses[i].type, sizeof(short unsigned));
+            os.write((char*)&courses[i].optional, sizeof(bool));
             os << courses[i].name << std::endl;
         }
         os.close();

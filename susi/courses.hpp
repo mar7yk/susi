@@ -29,7 +29,7 @@ public:
     Courses();
     ~Courses();
     
-    void add(const String& name, const short unsigned type);
+    void add(const String& name, const bool optional);
     void add(const Course& course);
     
     void save();

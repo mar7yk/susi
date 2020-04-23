@@ -27,6 +27,8 @@ void SusiDatabase::enroll(const unsigned int fn, const String& program, const un
     size_t programID = programs.getID(program);
     if (programID != 0) {
         students.add(fn, name, programID, gruop);
+        
+        coursesInPrograms.addCoursesForYear(fn, programID, 1, enrolleesInCourses, courses);
     }
 }
 
@@ -36,6 +38,7 @@ void SusiDatabase::advance(const unsigned int fn) {
         delete &student;
     } else {
         ++student.year;
+        coursesInPrograms.addCoursesForYear(student.fn, student.programID, student.year, enrolleesInCourses, courses);
     }
 }
 
@@ -131,16 +134,16 @@ void SusiDatabase::addProgram(const String& name) {
     programs.add(name);
 }
 
-void SusiDatabase::addCourse(const String& name, const unsigned short type) {
-    courses.add(name, type);
+void SusiDatabase::addCourse(const String& name, const bool optional) {
+    courses.add(name, optional);
 }
 
-void SusiDatabase::addCourseToProgram(const String &courseName, const String &programName) {
+void SusiDatabase::addCourseToProgram(const String &courseName, const String &programName, const short unsigned year) {
     Course course = courses.get(courseName);
     size_t programID = programs.getID(programName);
     
     if (course.id != 0 && programID != 0) {
-        coursesInPrograms.add(course.id, programID);
+        coursesInPrograms.add(course.id, programID, year);
     }
 }
 

@@ -14,26 +14,44 @@ int main() {
     
     SusiDatabase database;
     
-    database.addProgram("Informatics");
-    
-    database.addCourse("OOP", 1);
-    database.addCourse("VA", 1);
-    database.addCourse("DSTR", 1);
-    
-    database.addCourseToProgram("OOP", "Informatics");
-    database.addCourseToProgram("VA", "Informatics");
-    database.addCourseToProgram("DSTR", "Informatics");
-    
-    
-    database.enroll(45709, "Informatics", 6, "Martin Kostov");
-    
-    database.enrollin(45709, "OOP");
-    database.enrollin(45709, "VA");
-    database.enrollin(45709, "DSTR");
-    
-    database.addGrade(45709, "OOP", 6);
+//    database.addProgram("Informatics");
+//    
+//    
+//    
+//    database.addCourse("UP", false);
+//    database.addCourse("LA", false);
+//    database.addCourse("AG", false);
+//    database.addCourse("DIS1", false);
+//    
+//    database.addCourse("OOP", false);
+//    database.addCourse("VA", false);
+//    database.addCourse("DSTR", false);
+//    database.addCourse("DIS2", false);
+//    
+//    database.addCourseToProgram("UP", "Informatics", 1);
+//    database.addCourseToProgram("LA", "Informatics", 1);
+//    database.addCourseToProgram("AG", "Informatics", 1);
+//    database.addCourseToProgram("DIS1", "Informatics", 1);
+//    
+//    database.addCourseToProgram("OOP", "Informatics", 2);
+//    database.addCourseToProgram("VA", "Informatics", 2);
+//    database.addCourseToProgram("DSTR", "Informatics", 2);
+//    database.addCourseToProgram("DIS2", "Informatics", 2);
+//    
+//    
+//    database.enroll(45709, "Informatics", 6, "Martin Kostov");
+//    
+//    database.advance(45709);
+//    
+//   
+//    database.addGrade(45709, "UP", 4);
+//    database.addGrade(45709, "LA", 3);
+//    database.addGrade(45709, "AG", 4);
+//    database.addGrade(45709, "DIS1", 4);
     
     database.report(45709);
+    
+    database.save();
     
     return 0;
 }
