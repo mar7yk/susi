@@ -48,7 +48,7 @@ public:
     
     void addGrade(const unsigned fn, const String courseName, const double grade);//†
     
-    void protocol(const String courseName) const;//?
+    void protocol(const String courseName) const;//?+
     
     void report(const unsigned fn) const;//?
     

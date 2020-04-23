@@ -100,7 +100,7 @@ void EnrolleesInCourses::infoForEnrollees(unsigned short courseID, const Student
 void EnrolleesInCourses::display(const EnrolleesInCourses::EnrolledInCourse &enrollee, const Students &allStudents) const {
     Student student = allStudents.get(enrollee.studentFN);
     
-    std::cout << student.name << " - " << enrollee.grade << std::endl;
+    std::cout << student.fn << " " << student.name << " - " << enrollee.grade << std::endl;
 }
 
 
