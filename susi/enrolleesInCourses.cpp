@@ -89,13 +89,20 @@ void EnrolleesInCourses::save() {
     }
 }
 
-void EnrolleesInCourses::infoForEnrollees(unsigned short courseID, const Students &allStudents, const Programs& allPrograms) const {
+void EnrolleesInCourses::infoForEnrollees(unsigned short courseID, const Students &allStudents) const {
     for (size_t i = 0; i < size; ++i) {
         if (enrollees[i].courseID == courseID) {
-            allStudents.info(enrollees[i].studentFN, allPrograms);
+            display(enrollees[i], allStudents);
         }
     }
 }
+
+void EnrolleesInCourses::display(const EnrolleesInCourses::EnrolledInCourse &enrollee, const Students &allStudents) const {
+    Student student = allStudents.get(enrollee.studentFN);
+    
+    std::cout << student.name << " - " << enrollee.grade << std::endl;
+}
+
 
 
 

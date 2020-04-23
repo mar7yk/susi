@@ -100,7 +100,7 @@ void SusiDatabase::print(const unsigned int fn) const {
 void SusiDatabase::printall(const String& program, const unsigned short year) const {
     size_t programID = programs.getID(program);
     if (programID != 0) {
-        
+        students.info(programID, year, programs);
     }
 }
 
@@ -122,7 +122,7 @@ void SusiDatabase::addGrade(const unsigned int fn, const String courseName, cons
 void SusiDatabase::protocol(const String courseName) const {
     Course course = courses.get(courseName);
     if (course.id != 0) {
-        enrolleesInCourses.infoForEnrollees(course.id, students, programs);
+        enrolleesInCourses.infoForEnrollees(course.id, students);
     }
 }
 

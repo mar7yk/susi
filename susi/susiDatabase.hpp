@@ -28,9 +28,9 @@ class SusiDatabase {
 public:
     void save();
     
-    void enroll(const unsigned fn, const String& program, const short unsigned gruop, const String &name);
+    void enroll(const unsigned fn, const String& program, const short unsigned gruop, const String &name);//†
     
-    void advance(const unsigned fn);
+    void advance(const unsigned fn);//†
     
     void change(const unsigned fn, const short unsigned option, const unsigned value);
     
@@ -40,17 +40,17 @@ public:
     
     void resume(const unsigned fn);
     
-    void print(const unsigned fn) const;
+    void print(const unsigned fn) const;//?
     
-    void printall(const String& program, const short unsigned year) const;
+    void printall(const String& program, const short unsigned year) const;//?
     
-    void enrollin(const unsigned fn, const String courseName);
+    void enrollin(const unsigned fn, const String courseName);//†
     
-    void addGrade(const unsigned fn, const String courseName, const double grade);
+    void addGrade(const unsigned fn, const String courseName, const double grade);//†
     
-    void protocol(const String courseName) const;
+    void protocol(const String courseName) const;//?
     
-    void report(const unsigned fn) const;
+    void report(const unsigned fn) const;//?
     
     void addProgram(const String& name);
     

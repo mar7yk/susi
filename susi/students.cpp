@@ -52,7 +52,7 @@ void Students::add(const unsigned int fn, const String &name, const size_t progr
     if (size == capacity) {
         resize(capacity + 20);
     }
-    students[size] = {fn, name, 1, programID, gruop, 0, 0};
+    students[size] = {fn, name, 1, programID, gruop, 1, 0};
     ++size;
 }
 
@@ -113,12 +113,11 @@ void Students::display(const Student &student, const Programs& allPrograms) cons
             break;
     }
     std::cout << student.name << ", ";
-    std::cout << "programID " << porgram << ", ";
+    std::cout << "program " << porgram << ", ";
     std::cout << "year "<< student.year << ", ";
     std::cout << "gruop "<< student.gruop << ", ";
     std::cout << "status "<< status << ", ";
-    std::cout << "average "<< student.average << ", ";
-    std::cout << std::endl;
+    std::cout << "average "<< student.average << std::endl;
 }
 
 void Students::info(const size_t programID, const unsigned short year, const Programs &allPrograms) const {

@@ -31,6 +31,8 @@ class EnrolleesInCourses {
     
     void resize(const size_t newCapacity);
     
+    void display(const EnrolledInCourse &enrollee, const Students &allStudents) const;
+    
 public:
     EnrolleesInCourses();
     ~EnrolleesInCourses();
@@ -43,7 +45,7 @@ public:
     
     void addGrade(const unsigned short studentFN, const short unsigned courseID, const double grade);
     
-    void infoForEnrollees(short unsigned courseID, const Students& allStudents, const Programs& allPrograms) const;
+    void infoForEnrollees(short unsigned courseID, const Students& allStudents) const;
 };
 
 #endif /* enrolleesInCourses_hpp */

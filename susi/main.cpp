@@ -49,7 +49,7 @@ int main() {
 //    database.addGrade(45709, "AG", 4);
 //    database.addGrade(45709, "DIS1", 4);
     
-    database.report(45709);
+    database.protocol("UP");
     
     database.save();
     
