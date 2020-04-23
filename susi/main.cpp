@@ -9,49 +9,58 @@
 #include <iostream>
 
 #include "susiDatabase.hpp"
+#include "stringCommandInterpreter.hpp"
 
 int main() {
     
-    SusiDatabase database;
+    StrCommandInterpr interpr;
     
-//    database.addProgram("Informatics");
+//    interpr.execut("add program Informatics");
+//
+//    interpr.execut("add course UP compulsory");
+//    interpr.execut("add course LA compulsory");
+//    interpr.execut("add course AG compulsory");
+//    interpr.execut("add course DIS1 compulsory");
+//
+//    interpr.execut("add course OOP compulsory");
+//    interpr.execut("add course VA compulsory");
+//    interpr.execut("add course DSTR compulsory");
+//    interpr.execut("add course DIS2 compulsory");
+//
+//    interpr.execut("add course OOP-practicum compulsory");
 //
 //
+//    interpr.execut("add courseToProgram UP Informatics 1");
+//    interpr.execut("add courseToProgram LA Informatics 1");
+//    interpr.execut("add courseToProgram AG Informatics 1");
+//    interpr.execut("add courseToProgram DIS1 Informatics 1");
 //
-//    database.addCourse("UP", false);
-//    database.addCourse("LA", false);
-//    database.addCourse("AG", false);
-//    database.addCourse("DIS1", false);
+//    interpr.execut("add courseToProgram OOP Informatics 2");
+//    interpr.execut("add courseToProgram VA Informatics 2");
+//    interpr.execut("add courseToProgram DSTR Informatics 2");
+//    interpr.execut("add courseToProgram DIS2 Informatics 2");
 //
-//    database.addCourse("OOP", false);
-//    database.addCourse("VA", false);
-//    database.addCourse("DSTR", false);
-//    database.addCourse("DIS2", false);
-//
-//    database.addCourseToProgram("UP", "Informatics", 1);
-//    database.addCourseToProgram("LA", "Informatics", 1);
-//    database.addCourseToProgram("AG", "Informatics", 1);
-//    database.addCourseToProgram("DIS1", "Informatics", 1);
-//
-//    database.addCourseToProgram("OOP", "Informatics", 2);
-//    database.addCourseToProgram("VA", "Informatics", 2);
-//    database.addCourseToProgram("DSTR", "Informatics", 2);
-//    database.addCourseToProgram("DIS2", "Informatics", 2);
+//    interpr.execut("add courseToProgram OOP-practicum Informatics 2");
 //
 //
-//    database.enroll(45709, "Informatics", 6, "Martin Kostov");
+//    interpr.execut("enroll 45709 Informatics 6 Martin Petyov Kostov");
 //
-//    database.advance(45709);
+//    interpr.execut("add grade 45709 UP 4");
+//    interpr.execut("add grade 45709 LA 3");
+//    interpr.execut("add grade 45709 AG 4");
+//    interpr.execut("add grade 45709 DIS1 4");
 //
+//    interpr.execut("advance 45709");
 //
-//    database.addGrade(45709, "UP", 4);
-//    database.addGrade(45709, "LA", 3);
-//    database.addGrade(45709, "AG", 4);
-//    database.addGrade(45709, "DIS1", 4);
+//    interpr.execut("enrollin 45709 OOP-practicum");
     
-    database.protocol("UP");
-    
-    database.save();
+    String command;
+
+    do {
+        std::cout << "> ";
+        getline(std::cin, command, 1000);
+
+    } while (interpr.execut(command));
     
     return 0;
 }

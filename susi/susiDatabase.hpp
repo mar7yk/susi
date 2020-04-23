@@ -23,16 +23,21 @@ class SusiDatabase {
     Programs programs;
     EnrolleesInCourses enrolleesInCourses;
     CoursesInPrograms coursesInPrograms;
-    bool isSaved;
     
 public:
+    bool isSaved;
+    
+    SusiDatabase();
+    
     void save();
     
     void enroll(const unsigned fn, const String& program, const short unsigned gruop, const String &name);//†
     
     void advance(const unsigned fn);//†
     
-    void change(const unsigned fn, const short unsigned option, const unsigned value);
+    void changeProgram(const unsigned fn, const String& program);
+    void changeGruop(const unsigned fn, const unsigned short gruop);
+    void changeYear(const unsigned fn, const unsigned short year);
     
     void graduate(const unsigned fn);
     
@@ -54,7 +59,7 @@ public:
     
     void addProgram(const String& name);
     
-    void addCourse(const String& name, const bool optional);
+    void addCourse(const String& name, const String& type);
     
     void addCourseToProgram(const String& courseName, const String& programName, const short unsigned year);
 };

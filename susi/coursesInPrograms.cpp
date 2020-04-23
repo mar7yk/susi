@@ -20,7 +20,8 @@ CoursesInPrograms::CoursesInPrograms() {
         coursesInPrograms = new CourseInProgram[capacity];
         for (size_t i = 0; i < size; ++i) {
             is.read((char*)&coursesInPrograms[i].courseID, sizeof(size_t));
-            is.read((char*)&coursesInPrograms[i].programID, sizeof(size_t));
+            is.read((char*)&coursesInPrograms[i].programID, sizeof(size_t));is.read((char*)&coursesInPrograms[i].year, sizeof(short unsigned));
+            
         }
         is.close();
     } else {
@@ -63,6 +64,7 @@ void CoursesInPrograms::save() {
         for (unsigned i = 0; i < size; ++i) {
             os.write((char*)&coursesInPrograms[i].courseID, sizeof(size_t));
             os.write((char*)&coursesInPrograms[i].programID, sizeof(size_t));
+            os.write((char*)&coursesInPrograms[i].year, sizeof(short unsigned));
         }
         os.close();
         
