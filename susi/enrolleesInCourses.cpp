@@ -103,6 +103,25 @@ void EnrolleesInCourses::display(const EnrolleesInCourses::EnrolledInCourse &enr
     std::cout << student.fn << " " << student.name << " - " << enrollee.grade << std::endl;
 }
 
+double EnrolleesInCourses::getNewAverage(const unsigned short studentFN) const {
+    double average = 0;
+    double divider = 0;
+    for (size_t i = 0; i < size; ++i) {
+        if (enrollees[i].studentFN == studentFN) {
+            if (enrollees[i].grade == 0) {
+                enrollees[i].grade = 2;
+            }
+            average += enrollees[i].grade;
+            ++divider;
+        }
+    }
+    if (divider != 0) {
+        average /= divider;
+    }
+    return average;
+}
+
+
 
 
 

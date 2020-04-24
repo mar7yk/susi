@@ -15,7 +15,6 @@ int main() {
     
     StrCommandInterpr interpr;
     
-    
 //    interpr.execut("add program Informatics");
 //
 //    interpr.execut("add course UP compulsory");

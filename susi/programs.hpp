@@ -12,11 +12,17 @@
 #include <stdio.h>
 #include <fstream>
 
-#include "program.hpp"
+#include "string.hpp"
+
 
 class Programs {
     const static String file;
     static size_t newID;
+    
+    struct Program {
+        size_t id;
+        String name;
+    };
     
     size_t size;
     size_t capacity;

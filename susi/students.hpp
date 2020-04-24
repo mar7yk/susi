@@ -16,6 +16,7 @@
 #include "string.hpp"
 
 #include "programs.hpp"
+#include "studentInfo.h"
 
 class Students {
     const static String file;
@@ -39,6 +40,8 @@ class Students {
     
     void display(const Student& student, const Programs& allPrograms) const;
     
+    StudentInfo getInfo(const Student& student, const Programs& allPrograms) const;
+    
 public:
     Students();
     ~Students();
@@ -49,7 +52,7 @@ public:
     
     Student &get(const unsigned fn) const;
     
-    void info(const unsigned fn, const Programs& allPrograms) const;
+    StudentInfo info(const unsigned fn, const Programs& allPrograms) const;
     
     void info(const size_t programID, const short unsigned year, const Programs& allPrograms) const;
 };

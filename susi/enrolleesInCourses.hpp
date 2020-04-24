@@ -46,6 +46,8 @@ public:
     void addGrade(const unsigned short studentFN, const short unsigned courseID, const double grade);
     
     void infoForEnrollees(short unsigned courseID, const Students& allStudents) const;
+    
+    double getNewAverage(const short unsigned studentFN) const;
 };
 
 #endif /* enrolleesInCourses_hpp */

@@ -86,13 +86,15 @@ void Students::save() {
     }
 }
 
-void Students::info(const unsigned int fn, const Programs& allPrograms) const {
+StudentInfo Students::info(const unsigned int fn, const Programs& allPrograms) const {
+    StudentInfo studInfo = {0};
     for (size_t i = 0; i < size; ++i) {
         if (students[i].fn == fn) {
-            display(students[i], allPrograms);
-            return;
+            studInfo = getInfo(students[i], allPrograms);
+            return studInfo;
         }
     }
+    return studInfo;
 }
 
 void Students::display(const Student &student, const Programs& allPrograms) const {
@@ -120,6 +122,36 @@ void Students::display(const Student &student, const Programs& allPrograms) cons
     std::cout << "average "<< student.average << std::endl;
 }
 
+StudentInfo Students::getInfo(const Student &student, const Programs &allPrograms) const {
+    StudentInfo studInfo = {0};
+    
+    String porgram = allPrograms.getName(student.programID);
+    String status = "";
+    switch (student.status) {
+        case 1:
+            status = "enrolled";
+            break;
+        case 2:
+            status = "interrupt";
+            break;
+        case 3:
+            status = "graduate";
+            break;
+            
+        default:
+            break;
+    }
+    studInfo.fn = student.fn;
+    studInfo.name = student.name;
+    studInfo.program = porgram;
+    studInfo.year = student.year;
+    studInfo.gruop = student.gruop;
+    studInfo.status = status;
+    studInfo.average = student.average;
+    
+    return studInfo;
+}
+
 void Students::info(const size_t programID, const unsigned short year, const Programs &allPrograms) const {
     for (size_t i = 0; i < size; ++i) {
         if (students[i].programID == programID && students[i].year == year) {
@@ -127,6 +159,9 @@ void Students::info(const size_t programID, const unsigned short year, const Pro
         }
     }
 }
+
+
+
 
 
 
