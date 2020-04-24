@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <fstream>
 
-#include "course.hpp"
+#include "course.h"
 #include "string.hpp"
 
 class Courses {
