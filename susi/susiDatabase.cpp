@@ -43,6 +43,7 @@ void SusiDatabase::advance(const unsigned int fn) {
         delete &student;
     } else {
         ++student.year;
+        student.average = enrolleesInCourses.getNewAverage(student.fn);
         coursesInPrograms.addCoursesForYear(student.fn, student.programID, student.year, enrolleesInCourses, courses);
         
         isSaved = false;
@@ -112,8 +113,8 @@ void SusiDatabase::resume(const unsigned int fn) {
     }
 }
 
-void SusiDatabase::print(const unsigned int fn) const {
-    students.info(fn, programs);
+StudentInfo SusiDatabase::print(const unsigned int fn) const {
+    return students.info(fn, programs);
 }
 
 void SusiDatabase::printall(const String& program, const unsigned short year) const {

@@ -17,6 +17,8 @@
 #include "enrolleesInCourses.hpp"
 #include "coursesInPrograms.hpp"
 
+#include "studentInfo.h"
+
 class SusiDatabase {
     Students students;
     Courses courses;
@@ -45,7 +47,7 @@ public:
     
     void resume(const unsigned fn);
     
-    void print(const unsigned fn) const;//?
+    StudentInfo print(const unsigned fn) const;//?
     
     void printall(const String& program, const short unsigned year) const;//?
     

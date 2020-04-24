@@ -86,7 +86,7 @@ void StrCommandInterpr::_enroll() {
     unsigned fn = (unsigned)stringToNum(strtok(NULL, " "));
     String program = strtok(NULL, " ");
     unsigned short gruop = stringToNum(strtok(NULL, " "));
-    String name = strtok(NULL, " ");
+    String name = strtok(NULL, "\n");
     
     database.enroll(fn, program, gruop, name);
 }
@@ -132,7 +132,15 @@ void StrCommandInterpr::_resume() {
 
 void StrCommandInterpr::_print() {
     unsigned fn = (unsigned)stringToNum(strtok(NULL, " "));
-    database.print(fn);
+    
+    StudentInfo student = database.print(fn);
+    std::cout << student.name << ", ";
+    std::cout << "program " << student.program << ", ";
+    std::cout << "year "<< student.year << ", ";
+    std::cout << "gruop "<< student.gruop << ", ";
+    std::cout << "status "<< student.status << ", ";
+    std::cout << "average "<< student.average << std::endl;
+    
 }
 
 void StrCommandInterpr::_printall() {
