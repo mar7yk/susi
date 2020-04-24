@@ -1,13 +1,13 @@
 //
-//  student.hpp
+//  student.h
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef student_hpp
-#define student_hpp
+#ifndef student_h
+#define student_h
 
 #include <stdio.h>
 
@@ -30,4 +30,4 @@ struct Student {
     
 };
 
-#endif /* student_hpp */
+#endif /* student_h */

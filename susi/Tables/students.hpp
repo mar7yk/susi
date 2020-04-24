@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <fstream>
 
-#include "student.hpp"
+#include "student.h"
 #include "string.hpp"
 
 #include "programs.hpp"
