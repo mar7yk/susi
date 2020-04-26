@@ -21,13 +21,6 @@ struct Student {
     short unsigned gruop;
     short unsigned status;
     double average;
- 
-//    void advance();
-//
-//    void changeProgram(const unsigned programID);
-//    void changeGroup(const short unsigned gruop);
-//    void changeYear(const short unsigned year);
-    
 };
 
 #endif /* student_h */

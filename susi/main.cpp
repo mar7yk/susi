@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "susiDatabase.hpp"
+#include "string.hpp"
 #include "stringCommandInterpreter.hpp"
 
 int main() {

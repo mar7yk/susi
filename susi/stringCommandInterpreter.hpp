@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 
+#include "string.hpp"
 #include "susiDatabase.hpp"
 #include "command.h"
 
