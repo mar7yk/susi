@@ -10,25 +10,25 @@
 #define command_h
 
 enum class Command {
-    invalid = -1,
-    save = 0,
-    help,
-    exit,
-    enroll,
-    advance,
-    change,
-    graduate,
-    interrupt,
-    resume,
-    print,
-    printall,
-    enrollin,
-    addgrade,
-    protocol,
-    report,
-    addProgram,
-    addCourse,
-    addCourseToProgram
+    Invalid = -1,
+    Save = 0,
+    Help,
+    Exit,
+    Enroll,
+    Advance,
+    Change,
+    Graduate,
+    Interrupt,
+    Resume,
+    Print,
+    Printall,
+    Enrollin,
+    Addgrade,
+    Protocol,
+    Report,
+    AddProgram,
+    AddCourse,
+    AddCourseToProgram
 };
 
 #endif /* command_h */

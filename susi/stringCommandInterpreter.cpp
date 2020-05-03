@@ -17,62 +17,62 @@ bool StrCommandInterpr::execut(const String &newCommand) {
     Command command = getCommand(sCommand);;
 
     switch (command) {
-        case Command::invalid:
+        case Command::Invalid:
             std::cout << "command not found: " << sCommand << std::endl;
             break;
-        case Command::save:
+        case Command::Save:
             database.save();
             break;
-        case Command::help:
+        case Command::Help:
             _help();
             break;
-        case Command::exit:
+        case Command::Exit:
             _exit();
             toContinue = false;
             break;
-        case Command::enroll:
+        case Command::Enroll:
             _enroll();
             break;
-        case Command::advance:
+        case Command::Advance:
             _advance();
             break;
-        case Command::change:
+        case Command::Change:
             _change();
             break;
-        case Command::graduate:
+        case Command::Graduate:
             _graduate();
             break;
-        case Command::interrupt:
+        case Command::Interrupt:
             _interrupt();
             break;
-        case Command::resume:
+        case Command::Resume:
             _resume();
             break;
-        case Command::print:
+        case Command::Print:
             _print();
             break;
-        case Command::printall:
+        case Command::Printall:
             _printall();
             break;
-        case Command::enrollin:
+        case Command::Enrollin:
             _enrollin();
             break;
-        case Command::addgrade:
+        case Command::Addgrade:
             _addgrade();
             break;
-        case Command::protocol:
+        case Command::Protocol:
             _protocol();
             break;
-        case Command::report:
+        case Command::Report:
             _report();
             break;
-        case Command::addProgram:
+        case Command::AddProgram:
             _addProgram();
             break;
-        case Command::addCourse:
+        case Command::AddCourse:
             _addCourse();
             break;
-        case Command::addCourseToProgram:
+        case Command::AddCourseToProgram:
             _addCourseToProgram();
             break;
     }
@@ -217,32 +217,32 @@ void StrCommandInterpr::_exit() {
 }
 
 Command StrCommandInterpr::getCommand(const String &sCommad) {
-    if (sCommad == "save") return Command::save;
-    if (sCommad == "help") return Command::help;
-    if (sCommad == "exit") return Command::exit;
-    if (sCommad == "enroll") return Command::enroll;
-    if (sCommad == "advance") return Command::advance;
-    if (sCommad == "change") return Command::change;
-    if (sCommad == "graduate") return Command::graduate;
-    if (sCommad == "interrupt") return Command::interrupt;
-    if (sCommad == "resume") return Command::resume;
-    if (sCommad == "print") return Command::print;
-    if (sCommad == "printall") return Command::printall;
-    if (sCommad == "enrollin") return Command::enrollin;
-    if (sCommad == "protocol") return Command::protocol;
-    if (sCommad == "report") return Command::report;
+    if (sCommad == "save") return Command::Save;
+    if (sCommad == "help") return Command::Help;
+    if (sCommad == "exit") return Command::Exit;
+    if (sCommad == "enroll") return Command::Enroll;
+    if (sCommad == "advance") return Command::Advance;
+    if (sCommad == "change") return Command::Change;
+    if (sCommad == "graduate") return Command::Graduate;
+    if (sCommad == "interrupt") return Command::Interrupt;
+    if (sCommad == "resume") return Command::Resume;
+    if (sCommad == "print") return Command::Print;
+    if (sCommad == "printall") return Command::Printall;
+    if (sCommad == "enrollin") return Command::Enrollin;
+    if (sCommad == "protocol") return Command::Protocol;
+    if (sCommad == "report") return Command::Report;
 
 
     if (sCommad == "add") {
         String sec = strtok(NULL, " ");
-        if(sec == "grade")  return Command::addgrade;
-        if(sec == "program")  return Command::addProgram;
-        if(sec == "course")  return Command::addCourse;
-        if(sec == "courseToProgram")  return Command::addCourseToProgram;
+        if(sec == "grade")  return Command::Addgrade;
+        if(sec == "program")  return Command::AddProgram;
+        if(sec == "course")  return Command::AddCourse;
+        if(sec == "courseToProgram")  return Command::AddCourseToProgram;
     }
 
 
-    return Command::invalid;
+    return Command::Invalid;
 }
 
 void StrCommandInterpr::_help() {
