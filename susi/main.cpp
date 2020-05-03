@@ -27,7 +27,7 @@ int main() {
 //    interpr.execut("add course DSTR compulsory");
 //    interpr.execut("add course DIS2 compulsory");
 //
-//    interpr.execut("add course OOP-practicum compulsory");
+//    interpr.execut("add course OOP-practicum optional");
 //
 //
 //    interpr.execut("add courseToProgram UP Informatics 1");

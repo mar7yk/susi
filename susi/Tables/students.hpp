@@ -21,17 +21,6 @@
 class Students {
     const static String file;
     
-//    struct Student {
-//        unsigned fn;
-//        String name;
-//        short unsigned year;
-//        size_t programID;
-//        short unsigned gruop;
-//        short unsigned status;
-//        double average;
-//    };
-
-    
     size_t size;
     size_t capacity;
     Student* students;
