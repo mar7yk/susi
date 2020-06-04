@@ -164,7 +164,7 @@
 		C1E86CAF244F9AEE0059F47B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Marty Kostov";
 				TargetAttributes = {
 					C1E86CB6244F9AEE0059F47B = {
@@ -322,6 +322,7 @@
 		C1E86CBF244F9AEE0059F47B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -330,6 +331,7 @@
 		C1E86CC0244F9AEE0059F47B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
