@@ -13,11 +13,13 @@
 #include <fstream>
 
 #include "string.hpp"
+#include "vector.h"
+
 #include "courses.hpp"
-#include "enrolleesInCourses.hpp"
+#include "programs.hpp"
 
 class CoursesInPrograms {
-    const static String file;
+    const String file;
     
     struct CourseInProgram {
         size_t courseID;
@@ -25,21 +27,27 @@ class CoursesInPrograms {
         short unsigned year;
     };
     
-    size_t size;
-    size_t capacity;
-    CourseInProgram* coursesInPrograms;
+    Vector<CourseInProgram> coursesInPrograms;
     
-    void resize(const size_t newCapacity);
+    Programs& programs_;
+    Courses& courses_;
     
 public:
-    CoursesInPrograms();
-    ~CoursesInPrograms();
-    
-    void add(const size_t courseID, const size_t programID, const short unsigned year);
+    CoursesInPrograms(Programs& programs_, Courses& courses_);
     
     void save();
     
-    void addCoursesForYear(const unsigned int fn, const size_t programID, const unsigned short yaer, EnrolleesInCourses& allEnrollees, const Courses& allCourses);
+    void add(const size_t courseID, const size_t programID, const short unsigned year);
+    
+    Vector<Course> getMandatoryForYear(const size_t programID, const short unsigned year);
+    
+    Vector<Course> getMandatoryToYear(const size_t programID, const short unsigned year);
+    
+    Vector<Course> getMandatoryForAllYear(const size_t programID);
+    
+    Vector<Course> getOptional(const size_t programID);
+    
+    bool isAdded(const size_t courseID, const size_t programID);
 };
 
 #endif /* coursesInPrograms_hpp */

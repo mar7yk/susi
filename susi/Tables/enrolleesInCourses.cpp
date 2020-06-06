@@ -9,78 +9,29 @@
 #include "enrolleesInCourses.hpp"
 
 
-const String EnrolleesInCourses::file = "Enrollees-in-courses.bin";
-
-EnrolleesInCourses::EnrolleesInCourses() {
-    std::ifstream is(file.get(), std::ios::binary);
+EnrolleesInCourses::EnrolleesInCourses(Students& students, Courses& courses)
+    : file("Enrollees-in-courses.txt"), students_(students), courses_(courses) {
+    std::ifstream is(file.get());
     if(is.is_open()){
-        is.read((char*)&size, sizeof(size_t));
-        capacity = size + 20;
-        enrollees = new EnrolledInCourse[capacity];
+        size_t size;
+        is >> size;
+        
+        enrollees.resize(size);
+        
         for (size_t i = 0; i < size; ++i) {
-            is.read((char*)&enrollees[i].studentFN, sizeof(short unsigned));
-            is.read((char*)&enrollees[i].courseID, sizeof(size_t));
-            is.read((char*)&enrollees[i].grade, sizeof(double));
+            is >> enrollees[i].studentFN >> enrollees[i].courseID >> enrollees[i].grade;
         }
         is.close();
-    } else {
-        size = 0;
-        capacity = 1000;
-        enrollees = new EnrolledInCourse[capacity];
-    }
-}
-
-EnrolleesInCourses::~EnrolleesInCourses() {
-    delete [] enrollees;
-}
-
-void EnrolleesInCourses::add(const short unsigned studentFN, const short unsigned courseID) {
-    if (size == capacity) {
-        resize(capacity + 20);
-    }
-    enrollees[size] = {studentFN, courseID, 0};
-    ++size;
-}
-
-
-void EnrolleesInCourses::resize(const size_t newCapacity) {
-    capacity = newCapacity;
-    EnrolledInCourse* buff = new EnrolledInCourse[capacity];
-    for (size_t i = 0; i < size; ++i)
-        buff[i] = enrollees[i];
-    
-    delete [] enrollees;
-    enrollees = buff;
-}
-
-void EnrolleesInCourses::displayForStudent(const unsigned short studentFN, const Courses &allCourses) const{
-    
-    for (size_t i = 0; i < size; ++i) {
-        if (enrollees[i].studentFN == studentFN) {
-            Course single = allCourses.get(enrollees[i].courseID);
-            std::cout << single.name << " " << enrollees[i].grade << std::endl;
-        }
-    }
-}
-
-void EnrolleesInCourses::addGrade(const unsigned short studentFN, const unsigned short courseID, const double grade) {
-    for (size_t i = 0; i < size; ++i) {
-        if (enrollees[i].studentFN == studentFN && enrollees[i].courseID == courseID) {
-            enrollees[i].grade = grade;
-            return;
-        }
     }
 }
 
 void EnrolleesInCourses::save() {
-    std::ofstream os(file.get(), std::ios::binary);
+    std::ofstream os(file.get());
     if (os.is_open()) {
-        os.write((char*)&size, sizeof(size_t));
+        os << enrollees.size() << std::endl;
         
-        for (unsigned i = 0; i < size; ++i) {
-            os.write((char*)&enrollees[i].studentFN, sizeof(short unsigned));
-            os.write((char*)&enrollees[i].courseID, sizeof(size_t));
-            os.write((char*)&enrollees[i].grade, sizeof(double));
+        for (unsigned i = 0; i < enrollees.size(); ++i) {
+            os << enrollees[i].studentFN << " " << enrollees[i].courseID << " " << enrollees[i].grade << std::endl;
         }
         os.close();
         
@@ -89,42 +40,59 @@ void EnrolleesInCourses::save() {
     }
 }
 
-void EnrolleesInCourses::infoForEnrollees(unsigned short courseID, const Students &allStudents) const {
-    for (size_t i = 0; i < size; ++i) {
-        if (enrollees[i].courseID == courseID) {
-            display(enrollees[i], allStudents);
+void EnrolleesInCourses::add(const short unsigned studentFN, const short unsigned courseID) {
+    EnrolledInCourse newEnrolled = {studentFN, courseID, 0};
+    enrollees.push_back(newEnrolled);
+}
+
+void EnrolleesInCourses::update_grade(const unsigned short studentFN, const unsigned short courseID, const double grade) {
+    for (size_t i = 0; i < enrollees.size(); ++i) {
+        if (enrollees[i].studentFN == studentFN && enrollees[i].courseID == courseID) {
+            enrollees[i].grade = grade;
+            return;
         }
     }
 }
 
-void EnrolleesInCourses::display(const EnrolleesInCourses::EnrolledInCourse &enrollee, const Students &allStudents) const {
-    Student student = allStudents.get(enrollee.studentFN);
+Vector<StudentProtocol> EnrolleesInCourses::get_protocol(const size_t courseID) const {
+    Vector<StudentProtocol> protocol;
     
-    std::cout << student.fn << " " << student.name << " - " << enrollee.grade << std::endl;
-}
-
-double EnrolleesInCourses::getNewAverage(const unsigned short studentFN) const {
-    double average = 0;
-    double divider = 0;
-    for (size_t i = 0; i < size; ++i) {
-        if (enrollees[i].studentFN == studentFN) {
-            if (enrollees[i].grade == 0) {
-                enrollees[i].grade = 2;
-            }
-            average += enrollees[i].grade;
-            ++divider;
+    for (size_t i = 0; i < enrollees.size(); ++i) {
+        if (enrollees[i].courseID == courseID) {
+            Student student = students_.getByFN(enrollees[i].studentFN);
+            
+            StudentProtocol protocol_line;
+            
+            protocol_line.fn = student.fn;
+            protocol_line.name = student.name;
+            protocol_line.program = student.program;
+            protocol_line.gruop = student.gruop;
+            protocol_line.grade = enrollees[i].grade;
+            
+            protocol.push_back(protocol_line);
         }
     }
-    if (divider != 0) {
-        average /= divider;
-    }
-    return average;
+    
+    return protocol;
 }
 
-
-
-
-
-
+Vector<CourseReport> EnrolleesInCourses::get_report_by_fn(const unsigned int fn) {
+    Vector<CourseReport> report;
+    
+    for (size_t i = 0; i < enrollees.size(); ++i) {
+        if (enrollees[i].studentFN == fn) {
+            Course course = courses_.getByID(enrollees[i].courseID);
+            
+            CourseReport courseReport;
+            
+            courseReport.courseName = course.name;
+            courseReport.grade = enrollees[i].grade;
+            
+            report.push_back(courseReport);
+        }
+    }
+    
+    return report;
+}
 
 

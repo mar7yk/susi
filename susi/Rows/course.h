@@ -12,7 +12,7 @@
 #include "string.hpp"
 
 struct Course {
-    size_t id;
+    size_t ID;
     String name;
     bool optional;
 };

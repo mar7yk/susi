@@ -12,38 +12,49 @@
 #include <stdio.h>
 #include <fstream>
 
-#include "student.h"
 #include "string.hpp"
+#include "vector.h"
 
 #include "programs.hpp"
-#include "studentInfo.h"
+
+#include "student.h"
 
 class Students {
-    const static String file;
+    const String file;
     
-    size_t size;
-    size_t capacity;
-    Student* students;
+    struct StudentData {
+        unsigned fn;
+        String name;
+        short unsigned year;
+        size_t programID;
+        short unsigned gruop;
+        short unsigned status;
+        double average;
+    };
     
-    void resize(const size_t newCapacity);
+    Vector<StudentData> students;
     
-    void display(const Student& student, const Programs& allPrograms) const;
+    Programs& programs_;
     
-    StudentInfo getInfo(const Student& student, const Programs& allPrograms) const;
+    Student get(const StudentData& data) const;
     
 public:
-    Students();
-    ~Students();
+    Students(Programs& programs);
     
-    void save();
+    void save() const;
     
-    void add(const unsigned fn, const String &name, const size_t programID, const unsigned short gruop);
+    void add(const unsigned fn, const String &name,
+             const size_t programID, const unsigned short gruop);
     
-    Student &get(const unsigned fn) const;
+    Student getByFN(const unsigned fn) const;
     
-    StudentInfo info(const unsigned fn, const Programs& allPrograms) const;
+    Vector<Student> getByProgramIDAndYear(const size_t programID, const short unsigned gruop) const;
     
-    void info(const size_t programID, const short unsigned year, const Programs& allPrograms) const;
+    void update_year(const unsigned fn, const short unsigned year);
+    void update_group(const unsigned fn, const short unsigned gruop);
+    void update_program(const unsigned fn, const size_t programID);
+    void update_status(const unsigned fn, const short unsigned status);
+    void update_average(const unsigned fn, const double average);
 };
 
 #endif /* students_hpp */

@@ -13,34 +13,32 @@
 #include <fstream>
 
 #include "string.hpp"
+#include "vector.h"
+
+#include "Program.h"
 
 
 class Programs {
-    const static String file;
-    static size_t newID;
+    const String file;
+    size_t nextID;
     
     struct Program {
-        size_t id;
+        size_t ID;
         String name;
     };
     
-    size_t size;
-    size_t capacity;
-    Program* programs;
-    
-    void resize(const size_t newCapacity);
+    Vector<Program> programs;
     
 public:
     Programs();
-    ~Programs();
+    
+    void save() const;
     
     void add(const String& name);
     
-    void save();
+    String getNameByID(const size_t id) const;
     
-    String getName(const size_t id) const;
-    
-    size_t getID(const String& name) const;
+    size_t getIDByName(const String& name) const;
 };
 
 #endif /* programs_hpp */

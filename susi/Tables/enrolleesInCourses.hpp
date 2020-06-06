@@ -12,12 +12,17 @@
 #include <stdio.h>
 
 #include "string.hpp"
+#include "vector.h"
+
 #include "students.hpp"
 #include "courses.hpp"
 #include "programs.hpp"
 
+#include "StudentProtocol.h"
+#include "CourseReport.h"
+
 class EnrolleesInCourses {
-    const static String file;
+    const String file;
     
     struct EnrolledInCourse {
         short unsigned studentFN;
@@ -25,29 +30,23 @@ class EnrolleesInCourses {
         double grade;
     };
     
-    size_t size;
-    size_t capacity;
-    EnrolledInCourse* enrollees;
+    Vector<EnrolledInCourse> enrollees;
     
-    void resize(const size_t newCapacity);
-    
-    void display(const EnrolledInCourse &enrollee, const Students &allStudents) const;
+    Students& students_;
+    Courses& courses_;
     
 public:
-    EnrolleesInCourses();
-    ~EnrolleesInCourses();
-    
-    void add(const short unsigned studentFN, const short unsigned courseID);
-    
-    void displayForStudent(const unsigned short studentFN, const Courses &allCourses) const;
+    EnrolleesInCourses(Students& students, Courses& courses);
     
     void save();
     
-    void addGrade(const unsigned short studentFN, const short unsigned courseID, const double grade);
+    void add(const short unsigned studentFN, const short unsigned courseID);
     
-    void infoForEnrollees(short unsigned courseID, const Students& allStudents) const;
+    void update_grade(const unsigned short studentFN, const short unsigned courseID, const double grade);
     
-    double getNewAverage(const short unsigned studentFN) const;
+    Vector<StudentProtocol> get_protocol(const size_t courseID) const;
+    
+    Vector<CourseReport> get_report_by_fn(const unsigned fn);
 };
 
 #endif /* enrolleesInCourses_hpp */

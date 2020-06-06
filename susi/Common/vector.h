@@ -88,7 +88,7 @@ public:
     
     void resize(size_t newSise) {
         if (f_capacity < newSise)
-            reserve(f_size * 2);
+            reserve(newSise * 2);
         
         f_size = newSise;
     }
@@ -112,6 +112,14 @@ public:
     
     T& back() const {
         return arr[f_size - 1];
+    }
+    
+    T* begin() const {
+        return &arr[0];
+    }
+    
+    T* end() {
+        return &arr[f_size - 1];
     }
     
     void pop_back() {

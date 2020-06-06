@@ -14,29 +14,25 @@
 
 #include "course.h"
 #include "string.hpp"
+#include "vector.h"
+
 
 class Courses {
-    const static String file;
-    static size_t newID;
+    const String file;
+    size_t nextID;
     
-    size_t size;
-    size_t capacity;
-    Course* courses;
-    
-    void resize(const size_t newCapacity);
+    Vector<Course> courses;
     
 public:
     Courses();
-    ~Courses();
-    
-    void add(const String& name, const bool optional);
-    void add(const Course& course);
     
     void save();
     
-    Course get(const size_t id) const;
+    void add(const String& name, const bool optional);
     
-    Course get(const String& name) const;
+    Course getByID(const size_t id) const;
+    
+    Course getByName(const String& name) const;
 };
 
 #endif /* courses_hpp */

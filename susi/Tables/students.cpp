@@ -9,76 +9,40 @@
 #include "students.hpp"
 
 
-const String Students::file = "Students.bin";
-
-Students::Students() {
-    std::ifstream is(file.get(), std::ios::binary);
+Students::Students(Programs& programs)
+    : file("Students.txt"), programs_(programs) {
+    std::ifstream is(file.get());
     if(is.is_open()){
-        is.read((char*)&size, sizeof(size_t));
-        capacity = size + 20;
-        students = new Student[capacity];
+        size_t size;
+        is >> size;
+        
+        students.resize(size);
+        
         for (size_t i = 0; i < size; ++i) {
-            is.read((char*)&students[i].fn, sizeof(unsigned));
-            is.read((char*)&students[i].year, sizeof(short unsigned));
-            is.read((char*)&students[i].programID, sizeof(size_t));
-            is.read((char*)&students[i].gruop, sizeof(short unsigned));
-            is.read((char*)&students[i].status, sizeof(short unsigned));
-            is.read((char*)&students[i].average, sizeof(double));
+            
+            is >> students[i].fn >> students[i].year >> students[i].programID
+            >> students[i].gruop >> students[i].status >> students[i].average;
+            
+            is.ignore();
             getline(is, students[i].name);
         }
-        is.close();
-    } else {
-        size = 0;
-        capacity = 200;
-        students = new Student[capacity];
-    }
-}
-
-Students::~Students() {
-    delete [] students;
-}
-
-void Students::resize(const size_t newCapacity) {
-    capacity = newCapacity;
-    Student* buff = new Student[capacity];
-    for (size_t i = 0; i < size; ++i)
-        buff[i] = students[i];
-    
-    delete [] students;
-    students = buff;
-}
-
-void Students::add(const unsigned int fn, const String &name, const size_t programID, const unsigned short gruop) {
-    if (size == capacity) {
-        resize(capacity + 20);
-    }
-    students[size] = {fn, name, 1, programID, gruop, 1, 0};
-    ++size;
-}
-
-Student &Students::get(const unsigned fn) const {
-    for (size_t i = 0; i < size; ++i) {
-        if (students[i].fn == fn) {
-            return students[i];
-        }
-    }
-    return *(new Student);
-}
-
-void Students::save() {
-    std::ofstream os(file.get(), std::ios::binary);
-    if (os.is_open()) {
-        os.write((char*)&size, sizeof(size_t));
         
-        for (unsigned i = 0; i < size; ++i) {
-            os.write((char*)&students[i].fn, sizeof(unsigned));
-            os.write((char*)&students[i].year, sizeof(short unsigned));
-            os.write((char*)&students[i].programID, sizeof(size_t));
-            os.write((char*)&students[i].gruop, sizeof(short unsigned));
-            os.write((char*)&students[i].status, sizeof(short unsigned));
-            os.write((char*)&students[i].average, sizeof(double));
-            os << students[i].name << std::endl;
+        is.close();
+        
+    }
+}
+
+void Students::save() const {
+    std::ofstream os(file.get());
+    if (os.is_open()) {
+        os << students.size() << std::endl;
+        
+        for (unsigned i = 0; i < students.size(); ++i) {
+            os << students[i].fn << " " << students[i].year << " " << students[i].programID
+                << " " << students[i].gruop << " " << students[i].status
+                << " " << students[i].average << " " << students[i].name << std::endl;
         }
+        
         os.close();
         
     } else {
@@ -86,84 +50,111 @@ void Students::save() {
     }
 }
 
-StudentInfo Students::info(const unsigned int fn, const Programs& allPrograms) const {
-    StudentInfo studInfo = {0};
-    for (size_t i = 0; i < size; ++i) {
+void Students::add(const unsigned int fn, const String &name,
+                   const size_t programID, const unsigned short gruop) {
+    
+    StudentData newStudent = {fn, name, 1, programID, gruop, 1, 0};
+    students.push_back(newStudent);
+}
+
+Student Students::getByFN(const unsigned int fn) const {
+    for (size_t i = 0; i < students.size(); ++i) {
         if (students[i].fn == fn) {
-            studInfo = getInfo(students[i], allPrograms);
-            return studInfo;
+            Student student = get(students[i]);
+            
+            return student;
         }
     }
-    return studInfo;
-}
-
-void Students::display(const Student &student, const Programs& allPrograms) const {
-    String porgram = allPrograms.getName(student.programID);
-    String status = "";
-    switch (student.status) {
-        case 1:
-            status = "enrolled";
-            break;
-        case 2:
-            status = "interrupt";
-            break;
-        case 3:
-            status = "graduate";
-            break;
-            
-        default:
-            break;
-    }
-    std::cout << student.name << ", ";
-    std::cout << "program " << porgram << ", ";
-    std::cout << "year "<< student.year << ", ";
-    std::cout << "gruop "<< student.gruop << ", ";
-    std::cout << "status "<< status << ", ";
-    std::cout << "average "<< student.average << std::endl;
-}
-
-StudentInfo Students::getInfo(const Student &student, const Programs &allPrograms) const {
-    StudentInfo studInfo = {0};
     
-    String porgram = allPrograms.getName(student.programID);
-    String status = "";
-    switch (student.status) {
-        case 1:
-            status = "enrolled";
-            break;
-        case 2:
-            status = "interrupt";
-            break;
-        case 3:
-            status = "graduate";
-            break;
-            
-        default:
-            break;
-    }
-    studInfo.fn = student.fn;
-    studInfo.name = student.name;
-    studInfo.program = porgram;
-    studInfo.year = student.year;
-    studInfo.gruop = student.gruop;
-    studInfo.status = status;
-    studInfo.average = student.average;
-    
-    return studInfo;
+    return {};
 }
 
-void Students::info(const size_t programID, const unsigned short year, const Programs &allPrograms) const {
-    for (size_t i = 0; i < size; ++i) {
-        if (students[i].programID == programID && students[i].year == year) {
-            display(students[i], allPrograms);
+Vector<Student> Students::getByProgramIDAndYear(const size_t programID, const short unsigned year) const {
+    Vector<Student> studentsInfo;
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].programID == programID &&
+            students[i].year == year) {
+            
+            Student student = get(students[i]);
+            
+            studentsInfo.push_back(student);
+        }
+    }
+    
+    return studentsInfo;
+}
+
+Student Students::get(const StudentData &data) const {
+    Student student;
+    
+    size_t programID = data.programID;
+    
+    String program = programs_.getNameByID(programID);
+    
+    student.fn = data.fn;
+    student.name = data.name;
+    student.program = program;
+    student.year = data.year;
+    student.gruop = data.gruop;
+    student.status = data.status;
+    student.average = data.average;
+    
+    return student;
+}
+
+void Students::update_year(const unsigned int fn,
+                           const unsigned short year) {
+    
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].fn == fn) {
+            students[i].year = year;
+            return;
+        }
+    }
+    
+}
+
+void Students::update_group(const unsigned int fn,
+                            const unsigned short gruop) {
+    
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].fn == fn) {
+            students[i].gruop = gruop;
+            return;
         }
     }
 }
 
+void Students::update_program(const unsigned int fn,
+                              const size_t programID) {
+    
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].fn == fn) {
+            students[i].programID = programID;
+            return;
+        }
+    }
+}
 
+void Students::update_status(const unsigned int fn,
+                             const unsigned short status) {
+    
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].fn == fn) {
+            students[i].status = status;
+            return;
+        }
+    }
+}
 
-
-
-
-
+void Students::update_average(const unsigned int fn,
+                              const double average) {
+    
+    for (size_t i = 0; i < students.size(); ++i) {
+        if (students[i].fn == fn) {
+            students[i].average = average;
+            return;
+        }
+    }
+}
 

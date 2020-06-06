@@ -9,63 +9,34 @@
 #include "coursesInPrograms.hpp"
 
 
-const String CoursesInPrograms::file = "Courses-in-programs.bin";
-
-
-CoursesInPrograms::CoursesInPrograms() {
-    std::ifstream is(file.get(), std::ios::binary);
+CoursesInPrograms::CoursesInPrograms(Programs& programs, Courses& courses)
+    : file("Courses-in-programs.txt"), programs_(programs), courses_(courses) {
+        
+    std::ifstream is(file.get());
     if(is.is_open()){
-        is.read((char*)&size, sizeof(size_t));
-        capacity = size + 5;
-        coursesInPrograms = new CourseInProgram[capacity];
+        size_t size;
+        is >> size;
+        
+        coursesInPrograms.resize(size);
+        
         for (size_t i = 0; i < size; ++i) {
-            is.read((char*)&coursesInPrograms[i].courseID, sizeof(size_t));
-            is.read((char*)&coursesInPrograms[i].programID, sizeof(size_t));is.read((char*)&coursesInPrograms[i].year, sizeof(short unsigned));
-            
+            is >> coursesInPrograms[i].courseID >> coursesInPrograms[i].programID >> coursesInPrograms[i].year;
         }
+        
         is.close();
-    } else {
-        size = 0;
-        capacity = 50;
-        coursesInPrograms = new CourseInProgram[capacity];
     }
-}
-
-
-CoursesInPrograms::~CoursesInPrograms() {
-    delete [] coursesInPrograms;
-}
-
-
-void CoursesInPrograms::resize(const size_t newCapacity) {
-    capacity = newCapacity;
-    CourseInProgram* buff = new CourseInProgram[capacity];
-    for (size_t i = 0; i < size; ++i)
-        buff[i] = coursesInPrograms[i];
-    
-    delete [] coursesInPrograms;
-    coursesInPrograms = buff;
-}
-
-
-void CoursesInPrograms::add(const size_t courseID, const size_t programID, const short unsigned year) {
-    if (size == capacity) {
-        resize(capacity + 20);
-    }
-    coursesInPrograms[size] = {courseID, programID, year};
-    ++size;;
 }
 
 void CoursesInPrograms::save() {
-    std::ofstream os(file.get(), std::ios::binary);
+    std::ofstream os(file.get());
     if (os.is_open()) {
-        os.write((char*)&size, sizeof(size_t));
+        os << coursesInPrograms.size() << std::endl;
         
-        for (unsigned i = 0; i < size; ++i) {
-            os.write((char*)&coursesInPrograms[i].courseID, sizeof(size_t));
-            os.write((char*)&coursesInPrograms[i].programID, sizeof(size_t));
-            os.write((char*)&coursesInPrograms[i].year, sizeof(short unsigned));
+        for (unsigned i = 0; i < coursesInPrograms.size(); ++i) {
+            os << coursesInPrograms[i].courseID << " " << coursesInPrograms[i].programID
+                << " " << coursesInPrograms[i].year << std::endl;
         }
+        
         os.close();
         
     } else {
@@ -73,16 +44,93 @@ void CoursesInPrograms::save() {
     }
 }
 
-void CoursesInPrograms::addCoursesForYear(const unsigned int fn, const size_t programID, const unsigned short yaer, EnrolleesInCourses &allEnrollees, const Courses& allCourses) {
-    for (size_t i = 0; i < size; ++i) {
+
+void CoursesInPrograms::add(const size_t courseID, const size_t programID, const short unsigned year) {
+    
+    CourseInProgram newCourseInProgram = {courseID, programID, year};
+    
+    
+    coursesInPrograms.push_back(newCourseInProgram);
+}
+
+Vector<Course> CoursesInPrograms::getMandatoryForYear(const size_t programID, const unsigned short year) {
+    Vector<Course> mandatoryCourses;
+    
+    for (size_t i = 0; i < coursesInPrograms.size(); ++i) {
         if (coursesInPrograms[i].programID == programID &&
-            coursesInPrograms[i].year == yaer) {
-            Course course = allCourses.get(coursesInPrograms[i].courseID);
-            if (!course.optional) {
-                allEnrollees.add(fn, coursesInPrograms[i].courseID);
+            coursesInPrograms[i].year == year) {
+            Course course = courses_.getByID(coursesInPrograms[i].courseID);
+            
+            if (course.optional == false) {
+                mandatoryCourses.push_back(course);
             }
         }
     }
+    
+    return mandatoryCourses;
 }
+
+Vector<Course> CoursesInPrograms::getMandatoryToYear(const size_t programID, const unsigned short year) {
+    Vector<Course> mandatoryCourses;
+    
+    for (size_t i = 0; i < coursesInPrograms.size(); ++i) {
+        if (coursesInPrograms[i].programID == programID &&
+            coursesInPrograms[i].year <= year) {
+            Course course = courses_.getByID(coursesInPrograms[i].courseID);
+            
+            if (course.optional == false) {
+                mandatoryCourses.push_back(course);
+            }
+        }
+    }
+    
+    return mandatoryCourses;
+}
+
+Vector<Course> CoursesInPrograms::getMandatoryForAllYear(const size_t programID) {
+    Vector<Course> mandatoryCourses;
+    
+    for (size_t i = 0; i < coursesInPrograms.size(); ++i) {
+        if (coursesInPrograms[i].programID == programID) {
+            Course course = courses_.getByID(coursesInPrograms[i].courseID);
+            
+            if (course.optional == false) {
+                mandatoryCourses.push_back(course);
+            }
+            
+        }
+    }
+    
+    return mandatoryCourses;
+}
+
+Vector<Course> CoursesInPrograms::getOptional(const size_t programID) {
+    Vector<Course> optionalCourses;
+    
+    for (size_t i = 0; i < coursesInPrograms.size(); ++i) {
+        if (coursesInPrograms[i].programID == programID) {
+            Course course = courses_.getByID(coursesInPrograms[i].courseID);
+            
+            if (course.optional == true) {
+                optionalCourses.push_back(course);
+            }
+            
+        }
+    }
+    
+    return optionalCourses;
+}
+
+bool CoursesInPrograms::isAdded(const size_t courseID, const size_t programID) { 
+    for (size_t i = 0; i < coursesInPrograms.size(); ++i) {
+        if (coursesInPrograms[i].courseID == courseID &&
+            coursesInPrograms[i].programID == programID) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 
 

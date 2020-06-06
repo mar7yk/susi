@@ -16,8 +16,8 @@
 struct Student {
     unsigned fn;
     String name;
+    String program;
     short unsigned year;
-    size_t programID;
     short unsigned gruop;
     short unsigned status;
     double average;
