@@ -9,7 +9,11 @@
 #include "courses.hpp"
 
 
-Courses::Courses() : file("Courses.txt") {
+Courses::Courses() : Table("Courses.txt") {
+    load(file);
+}
+
+void Courses::load(const String &file) {
     std::ifstream is(file.get());
     if(is.is_open()){
         size_t size;
@@ -32,7 +36,7 @@ Courses::Courses() : file("Courses.txt") {
     }
 }
 
-void Courses::save() {
+void Courses::save() const {
     std::ofstream os(file.get());
     if (os.is_open()) {
         os << courses.size() << std::endl;
@@ -55,8 +59,6 @@ void Courses::add(const String &name, const bool optional) {
     ++nextID;
 }
 
-
-
 Course Courses::getByID(const size_t id) const {
     for (size_t i = 0; i < courses.size(); ++i) {
         if (courses[i].ID == id) {
@@ -77,6 +79,10 @@ Course Courses::getByName(const String &name) const {
     
     return {};
 }
+
+
+
+
 
 
 

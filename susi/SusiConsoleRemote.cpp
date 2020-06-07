@@ -21,7 +21,7 @@ bool SusiConsoleRemote::execut(const String &newCommand) {
 
     Command command = getCommand(sCommand);
     
-    try {
+//    try {
         switch (command) {
             case Command::Invalid:
                 std::cout << "command not found: " << sCommand << std::endl;
@@ -81,11 +81,14 @@ bool SusiConsoleRemote::execut(const String &newCommand) {
             case Command::AddCourseToProgram:
                 _addCourseToProgram();
                 break;
+            case Command::Upload:
+                _upload();
+                break;
         }
         
-    }  catch (std::exception& e) {
-        std::cout << e.what() << std::endl;
-    }
+//    }  catch (std::exception& e) {
+//        std::cout << e.what() << std::endl;
+//    }
     
     std::cout << std::endl;
 
@@ -112,6 +115,7 @@ Command SusiConsoleRemote::getCommand(const String &sCommad) const {
     if(sCommad == "addprogram") return Command::AddProgram;
     if(sCommad == "addcourse") return Command::AddCourse;
     if(sCommad == "addcoursetoprogram")  return Command::AddCourseToProgram;
+    if(sCommad == "upload")  return Command::Upload;
 
 
     return Command::Invalid;
@@ -356,6 +360,12 @@ void SusiConsoleRemote::_help() {
     
 }
 
+void SusiConsoleRemote::_upload() {
+    String folder = strtok(NULL, " ");;
+    
+    querys->upload(folder);
+}
+
 void SusiConsoleRemote::run() {
     
     String command;
@@ -367,4 +377,6 @@ void SusiConsoleRemote::run() {
     } while (execut(command));
     
 }
+
+
 

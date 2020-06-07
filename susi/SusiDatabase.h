@@ -34,6 +34,14 @@ struct SusiDatabase {
         enrolleesInCourses.save();
         coursesInPrograms.save();
     }
+    
+    void upload(const String &folder) {
+        programs.upload(folder);
+        students.upload(folder);
+        courses.upload(folder);
+        enrolleesInCourses.upload(folder);
+        coursesInPrograms.upload(folder);
+    }
 };
 
 

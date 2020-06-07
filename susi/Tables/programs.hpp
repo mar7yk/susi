@@ -12,14 +12,15 @@
 #include <stdio.h>
 #include <fstream>
 
+#include "Table.h"
+
 #include "string.hpp"
 #include "vector.h"
 
 #include "Program.h"
 
 
-class Programs {
-    const String file;
+class Programs : public Table {
     size_t nextID;
     
     struct Program {
@@ -29,10 +30,12 @@ class Programs {
     
     Vector<Program> programs;
     
+    void load(const String& file) override;
+    
 public:
     Programs();
     
-    void save() const;
+    void save() const override;
     
     void add(const String& name);
     

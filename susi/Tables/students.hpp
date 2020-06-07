@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <fstream>
 
+#include "Table.h"
+
 #include "string.hpp"
 #include "vector.h"
 
@@ -19,9 +21,7 @@
 
 #include "student.h"
 
-class Students {
-    const String file;
-    
+class Students : public Table {
     struct StudentData {
         unsigned fn;
         String name;
@@ -36,12 +36,15 @@ class Students {
     
     Programs& programs_;
     
+    
+    void load(const String& file) override;
+    
     Student get(const StudentData& data) const;
     
 public:
     Students(Programs& programs);
     
-    void save() const;
+    void save() const override;
     
     void add(const unsigned fn, const String &name,
              const size_t programID, const unsigned short gruop);

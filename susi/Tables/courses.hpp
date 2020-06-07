@@ -12,21 +12,24 @@
 #include <stdio.h>
 #include <fstream>
 
+#include "Table.h"
+
 #include "course.h"
 #include "string.hpp"
 #include "vector.h"
 
 
-class Courses {
-    const String file;
+class Courses : public Table {
     size_t nextID;
     
     Vector<Course> courses;
     
+    void load(const String& file) override;
+    
 public:
     Courses();
     
-    void save();
+    void save() const override;
     
     void add(const String& name, const bool optional);
     

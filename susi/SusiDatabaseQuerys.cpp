@@ -14,8 +14,13 @@ SusiDatabaseQuerys::SusiDatabaseQuerys(SusiDatabase &susiDataBase)
     
 }
 
-void SusiDatabaseQuerys::save() {
+void SusiDatabaseQuerys::save() const {
     dataBase->save();
+}
+
+
+void SusiDatabaseQuerys::upload(const String &folder) {
+    dataBase->upload(folder);
 }
 
 void SusiDatabaseQuerys::enroll(const unsigned int fn, const String &name,
@@ -70,6 +75,10 @@ void SusiDatabaseQuerys::change(const unsigned int fn, const String &option, con
     
     if (student.fn == 0) {
         throw std::runtime_error("There isn't student whit that fn.");
+    }
+    
+    if (student.status == 2) {
+        throw std::runtime_error("The student is interrupted!");
     }
     
     if (option == "program") {
@@ -228,6 +237,10 @@ void SusiDatabaseQuerys::enrollin(const unsigned int fn, const String &courseNam
         throw std::runtime_error("There isn't student whit that fn!");
     }
     
+    if (student.status == 2) {
+        throw std::runtime_error("The student is interrupted!");
+    }
+    
     Course course = dataBase->courses.getByName(courseName);
     
     if (course.ID == 0) {
@@ -267,6 +280,10 @@ void SusiDatabaseQuerys::addgrade(const unsigned short fn, const String &courseN
     
     if (student.fn == 0) {
         throw std::runtime_error("There isn't student whit that fn!");
+    }
+    
+    if (student.status == 2) {
+        throw std::runtime_error("The student is interrupted!");
     }
     
     Course course = dataBase->courses.getByName(courseName);
@@ -378,6 +395,8 @@ void SusiDatabaseQuerys::addcoursetoprogram(const String &program, const String 
     
     dataBase->coursesInPrograms.add(course.ID, programID, year);
 }
+
+
 
 
 

@@ -10,7 +10,11 @@
 
 
 Students::Students(Programs& programs)
-    : file("Students.txt"), programs_(programs) {
+    : Table("Students.txt"), programs_(programs) {
+    load(file);
+}
+
+void Students::load(const String &file) {
     std::ifstream is(file.get());
     if(is.is_open()){
         size_t size;
@@ -157,4 +161,8 @@ void Students::update_average(const unsigned int fn,
         }
     }
 }
+
+
+
+
 

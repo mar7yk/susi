@@ -56,6 +56,7 @@
 		C15518F6248A8BA6000CA8D0 /* SusiDatabaseQuerys.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SusiDatabaseQuerys.hpp; sourceTree = "<group>"; };
 		C15518F8248AB1A8000CA8D0 /* SusiConsoleRemote.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SusiConsoleRemote.cpp; sourceTree = "<group>"; };
 		C15518F9248AB1A8000CA8D0 /* SusiConsoleRemote.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SusiConsoleRemote.hpp; sourceTree = "<group>"; };
+		C1551913248C5CE5000CA8D0 /* Table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		C1E86CB7244F9AEE0059F47B /* susi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = susi; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E86CBA244F9AEE0059F47B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +97,7 @@
 		C122EB402452CB5800431F70 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				C1551913248C5CE5000CA8D0 /* Table.h */,
 				C122EB322452CA8200431F70 /* programs.cpp */,
 				C122EB342452CA8200431F70 /* programs.hpp */,
 				C122EB362452CA8200431F70 /* students.cpp */,

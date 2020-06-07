@@ -19,7 +19,9 @@ class SusiDatabaseQuerys {
 public:
     SusiDatabaseQuerys(SusiDatabase& susiDataBase);
     
-    void save();
+    void save() const;
+    
+    void upload(const String &folder);
     
     void enroll(const unsigned int fn, const String &name, const String& program, const unsigned short gruop);
     

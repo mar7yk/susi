@@ -12,14 +12,15 @@
 #include <stdio.h>
 #include <fstream>
 
+#include "Table.h"
+
 #include "string.hpp"
 #include "vector.h"
 
 #include "courses.hpp"
 #include "programs.hpp"
 
-class CoursesInPrograms {
-    const String file;
+class CoursesInPrograms : public Table {
     
     struct CourseInProgram {
         size_t courseID;
@@ -32,10 +33,12 @@ class CoursesInPrograms {
     Programs& programs_;
     Courses& courses_;
     
+    void load(const String& file) override;
+    
 public:
     CoursesInPrograms(Programs& programs_, Courses& courses_);
     
-    void save();
+    void save() const override;
     
     void add(const size_t courseID, const size_t programID, const short unsigned year);
     

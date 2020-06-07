@@ -39,6 +39,7 @@ class SusiConsoleRemote {
     void _addCourse();
     void _addCourseToProgram();
     void _exit();
+    void _upload();
     
 public:
     SusiConsoleRemote(SusiDatabaseQuerys &susiDatabaseQuerys);

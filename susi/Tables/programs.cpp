@@ -9,7 +9,11 @@
 #include "programs.hpp"
 
 
-Programs::Programs() : file("Programs.txt") {
+Programs::Programs() : Table("Programs.txt") {
+    load(file);
+}
+
+void Programs::load(const String &file) {
     std::ifstream is(file.get());
     if(is.is_open()){
         size_t size;
@@ -76,5 +80,10 @@ size_t Programs::getIDByName(const String &name) const {
     }
     return 0;
 }
+
+
+
+
+
 
 

@@ -10,8 +10,11 @@
 
 
 CoursesInPrograms::CoursesInPrograms(Programs& programs, Courses& courses)
-    : file("Courses-in-programs.txt"), programs_(programs), courses_(courses) {
-        
+    : Table("Courses-in-programs.txt"), programs_(programs), courses_(courses) {
+    load(file);
+}
+
+void CoursesInPrograms::load(const String &file) {
     std::ifstream is(file.get());
     if(is.is_open()){
         size_t size;
@@ -27,7 +30,7 @@ CoursesInPrograms::CoursesInPrograms(Programs& programs, Courses& courses)
     }
 }
 
-void CoursesInPrograms::save() {
+void CoursesInPrograms::save() const {
     std::ofstream os(file.get());
     if (os.is_open()) {
         os << coursesInPrograms.size() << std::endl;
@@ -131,6 +134,9 @@ bool CoursesInPrograms::isAdded(const size_t courseID, const size_t programID) {
     
     return false;
 }
+
+
+
 
 
 

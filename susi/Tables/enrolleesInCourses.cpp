@@ -10,7 +10,11 @@
 
 
 EnrolleesInCourses::EnrolleesInCourses(Students& students, Courses& courses)
-    : file("Enrollees-in-courses.txt"), students_(students), courses_(courses) {
+    : Table("Enrollees-in-courses.txt"), students_(students), courses_(courses) {
+    load(file);
+}
+
+void EnrolleesInCourses::load(const String &file) {
     std::ifstream is(file.get());
     if(is.is_open()){
         size_t size;
@@ -25,7 +29,7 @@ EnrolleesInCourses::EnrolleesInCourses(Students& students, Courses& courses)
     }
 }
 
-void EnrolleesInCourses::save() {
+void EnrolleesInCourses::save() const {
     std::ofstream os(file.get());
     if (os.is_open()) {
         os << enrollees.size() << std::endl;
@@ -94,5 +98,6 @@ Vector<CourseReport> EnrolleesInCourses::get_report_by_fn(const unsigned int fn)
     
     return report;
 }
+
 
 

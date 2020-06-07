@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 
+#include "Table.h"
+
 #include "string.hpp"
 #include "vector.h"
 
@@ -21,8 +23,7 @@
 #include "StudentProtocol.h"
 #include "CourseReport.h"
 
-class EnrolleesInCourses {
-    const String file;
+class EnrolleesInCourses : public Table {
     
     struct EnrolledInCourse {
         short unsigned studentFN;
@@ -35,10 +36,12 @@ class EnrolleesInCourses {
     Students& students_;
     Courses& courses_;
     
+    void load(const String& file) override;
+    
 public:
     EnrolleesInCourses(Students& students, Courses& courses);
     
-    void save();
+    void save() const override;
     
     void add(const short unsigned studentFN, const short unsigned courseID);
     

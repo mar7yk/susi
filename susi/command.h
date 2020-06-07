@@ -28,7 +28,8 @@ enum class Command {
     Report,
     AddProgram,
     AddCourse,
-    AddCourseToProgram
+    AddCourseToProgram,
+    Upload
 };
 
 #endif /* command_h */
