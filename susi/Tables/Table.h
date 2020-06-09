@@ -23,6 +23,8 @@ public:
         
     }
     
+    virtual ~Table() {}
+    
     void upload(const String &folder) {
         String filePath = folder;
         filePath += "/";
