@@ -12,9 +12,9 @@
 		C122EB3A2452CA8200431F70 /* students.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C122EB362452CA8200431F70 /* students.cpp */; };
 		C122EB3B2452CA8200431F70 /* courses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C122EB332452CA8200431F70 /* courses.cpp */; };
 		C122EB3C2452CA8200431F70 /* programs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C122EB322452CA8200431F70 /* programs.cpp */; };
-		C15518ED24891FAB000CA8D0 /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C15518EB24891FAB000CA8D0 /* string.cpp */; };
 		C15518FA248AB1A8000CA8D0 /* SusiConsoleRemote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C15518F8248AB1A8000CA8D0 /* SusiConsoleRemote.cpp */; };
 		C1551917248C89EB000CA8D0 /* SusiDatabaseQuerys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1551915248C89EB000CA8D0 /* SusiDatabaseQuerys.cpp */; };
+		C1551A9C248FF7D9000CA8D0 /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1551A9B248FF7D8000CA8D0 /* string.cpp */; };
 		C1E86CBB244F9AEE0059F47B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1E86CBA244F9AEE0059F47B /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,6 @@
 		C122EB412452CD1E00431F70 /* course.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = course.h; sourceTree = "<group>"; };
 		C15069E6244F9E4C00944772 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C15518EA24891FAB000CA8D0 /* string.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = string.hpp; sourceTree = "<group>"; };
-		C15518EB24891FAB000CA8D0 /* string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = string.cpp; sourceTree = "<group>"; };
 		C15518EC24891FAB000CA8D0 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
 		C15518EE2489205E000CA8D0 /* Program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
 		C15518F224896809000CA8D0 /* StudentProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentProtocol.h; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		C1551914248C89EB000CA8D0 /* SusiDatabaseQuerys.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SusiDatabaseQuerys.hpp; sourceTree = "<group>"; };
 		C1551915248C89EB000CA8D0 /* SusiDatabaseQuerys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SusiDatabaseQuerys.cpp; sourceTree = "<group>"; };
 		C1551916248C89EB000CA8D0 /* SusiDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SusiDatabase.h; sourceTree = "<group>"; };
+		C1551A9B248FF7D8000CA8D0 /* string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = string.cpp; sourceTree = "<group>"; };
 		C1E86CB7244F9AEE0059F47B /* susi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = susi; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E86CBA244F9AEE0059F47B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,7 @@
 		C122EB232452B6C700431F70 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C15518EB24891FAB000CA8D0 /* string.cpp */,
+				C1551A9B248FF7D8000CA8D0 /* string.cpp */,
 				C15518EA24891FAB000CA8D0 /* string.hpp */,
 				C15518EC24891FAB000CA8D0 /* vector.h */,
 			);
@@ -203,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C15518ED24891FAB000CA8D0 /* string.cpp in Sources */,
+				C1551A9C248FF7D9000CA8D0 /* string.cpp in Sources */,
 				C122EB3B2452CA8200431F70 /* courses.cpp in Sources */,
 				C122EB382452CA8200431F70 /* coursesInPrograms.cpp in Sources */,
 				C1551917248C89EB000CA8D0 /* SusiDatabaseQuerys.cpp in Sources */,
