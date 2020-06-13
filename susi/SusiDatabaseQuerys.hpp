@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 
-/// Изпращащ заявки към зададена susi база нанни
+/// Изпраща заявки към зададена susi база данни
 #include "SusiDatabase.h"
 
 class SusiDatabaseQuerys {
