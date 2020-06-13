@@ -1,13 +1,13 @@
 //
-//  student.h
+//  Student.h
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef student_h
-#define student_h
+#ifndef Student_h
+#define Student_h
 
 #include <stdio.h>
 
@@ -23,4 +23,4 @@ struct Student {
     double average;
 };
 
-#endif /* student_h */
+#endif /* Student_h */

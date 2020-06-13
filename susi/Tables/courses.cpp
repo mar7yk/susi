@@ -1,12 +1,12 @@
 //
-//  courses.cpp
+//  Courses.cpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#include "courses.hpp"
+#include "Courses.hpp"
 
 
 Courses::Courses() : Table("Courses.txt") {

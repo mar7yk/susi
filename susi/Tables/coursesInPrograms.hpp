@@ -1,13 +1,13 @@
 //
-//  coursesInPrograms.hpp
+//  CoursesInPrograms.hpp
 //  susi
 //
 //  Created by Marty Kostov on 23.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef coursesInPrograms_hpp
-#define coursesInPrograms_hpp
+#ifndef CoursesInPrograms_hpp
+#define CoursesInPrograms_hpp
 
 #include <stdio.h>
 
@@ -16,8 +16,8 @@
 
 #include "Table.h"
 
-#include "courses.hpp"
-#include "programs.hpp"
+#include "Courses.hpp"
+#include "Programs.hpp"
 
 class CoursesInPrograms : public Table {
     
@@ -52,4 +52,4 @@ public:
     bool isAdded(const size_t courseID, const size_t programID);
 };
 
-#endif /* coursesInPrograms_hpp */
+#endif /* CoursesInPrograms_hpp */

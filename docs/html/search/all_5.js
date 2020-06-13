@@ -6,8 +6,8 @@ var searchData=
   ['enrolledincourse_56',['EnrolledInCourse',['../struct_enrollees_in_courses_1_1_enrolled_in_course.html',1,'EnrolleesInCourses']]],
   ['enrollees_57',['enrollees',['../class_enrollees_in_courses.html#ae4f604013a26a4374382b9f61cbf17f2',1,'EnrolleesInCourses']]],
   ['enrolleesincourses_58',['EnrolleesInCourses',['../class_enrollees_in_courses.html',1,'EnrolleesInCourses'],['../struct_susi_database.html#a86cae0db3725e9231eb910b33db9b717',1,'SusiDatabase::enrolleesInCourses()'],['../class_enrollees_in_courses.html#ad3c117a9d8c96fcd7c52dda6b089fa93',1,'EnrolleesInCourses::EnrolleesInCourses()']]],
-  ['enrolleesincourses_2ecpp_59',['enrolleesInCourses.cpp',['../enrollees_in_courses_8cpp.html',1,'']]],
-  ['enrolleesincourses_2ehpp_60',['enrolleesInCourses.hpp',['../enrollees_in_courses_8hpp.html',1,'']]],
+  ['enrolleesincourses_2ecpp_59',['EnrolleesInCourses.cpp',['../_enrollees_in_courses_8cpp.html',1,'']]],
+  ['enrolleesincourses_2ehpp_60',['EnrolleesInCourses.hpp',['../_enrollees_in_courses_8hpp.html',1,'']]],
   ['enrollin_61',['enrollin',['../class_susi_database_querys.html#aa36cef8143ae2e216147bd2149cab5bd',1,'SusiDatabaseQuerys::enrollin()'],['../command_8h.html#a2afce0a47a93eee73a314d53e4890153a8cdfb5c7af93105f784e5025b1e75505',1,'Enrollin():&#160;command.h']]],
   ['execut_62',['execut',['../class_susi_console_remote.html#afd508aec4dd613da7127f93ee4ef2171',1,'SusiConsoleRemote']]],
   ['exit_63',['Exit',['../command_8h.html#a2afce0a47a93eee73a314d53e4890153afef46e5063ce3dc78b8ae64fa474241d',1,'command.h']]]

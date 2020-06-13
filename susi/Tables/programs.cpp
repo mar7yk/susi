@@ -1,12 +1,12 @@
 //
-//  programs.cpp
+//  Programs.cpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#include "programs.hpp"
+#include "Programs.hpp"
 
 
 Programs::Programs() : Table("Programs.txt") {

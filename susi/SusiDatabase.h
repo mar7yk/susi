@@ -9,11 +9,11 @@
 #ifndef SusiDatabase_h
 #define SusiDatabase_h
 
-#include "students.hpp"
-#include "courses.hpp"
-#include "programs.hpp"
-#include "enrolleesInCourses.hpp"
-#include "coursesInPrograms.hpp"
+#include "Students.hpp"
+#include "Courses.hpp"
+#include "Programs.hpp"
+#include "EnrolleesInCourses.hpp"
+#include "CoursesInPrograms.hpp"
 
 /// Структора от таблици
 struct SusiDatabase {

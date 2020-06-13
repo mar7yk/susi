@@ -1,13 +1,13 @@
 //
-//  enrolleesInCourses.hpp
+//  EnrolleesInCourses.hpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef enrolleesInCourses_hpp
-#define enrolleesInCourses_hpp
+#ifndef EnrolleesInCourses_hpp
+#define EnrolleesInCourses_hpp
 
 #include <stdio.h>
 
@@ -16,8 +16,8 @@
 
 #include "Table.h"
 
-#include "students.hpp"
-#include "courses.hpp"
+#include "Students.hpp"
+#include "Courses.hpp"
 #include "StudentProtocol.h"
 #include "CourseReport.h"
 
@@ -50,4 +50,4 @@ public:
     Vector<CourseReport> get_report_by_fn(const unsigned fn);
 };
 
-#endif /* enrolleesInCourses_hpp */
+#endif /* EnrolleesInCourses_hpp */

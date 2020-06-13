@@ -1,13 +1,13 @@
 //
-//  programs.hpp
+//  Programs.hpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef programs_hpp
-#define programs_hpp
+#ifndef Programs_hpp
+#define Programs_hpp
 
 #include <stdio.h>
 
@@ -43,4 +43,4 @@ public:
     size_t getIDByName(const String& name) const;
 };
 
-#endif /* programs_hpp */
+#endif /* Programs_hpp */

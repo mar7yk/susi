@@ -9,17 +9,17 @@ var searchData=
   ['copy_35',['copy',['../class_vector.html#af814b039cfa44e866e7bd4b1100149b8',1,'Vector']]],
   ['copyfrom_36',['copyFrom',['../class_string.html#a603a8da5a69ea6dfc86070c7107f48ec',1,'String']]],
   ['course_37',['Course',['../struct_course.html',1,'']]],
-  ['course_2eh_38',['course.h',['../course_8h.html',1,'']]],
+  ['course_2eh_38',['Course.h',['../_course_8h.html',1,'']]],
   ['courseid_39',['courseID',['../struct_courses_in_programs_1_1_course_in_program.html#ae0ae10bf134568ba50abe4531c5395ed',1,'CoursesInPrograms::CourseInProgram::courseID()'],['../struct_enrollees_in_courses_1_1_enrolled_in_course.html#a0bbf33b274eeefd69c1a0f47ada8a70d',1,'EnrolleesInCourses::EnrolledInCourse::courseID()']]],
   ['courseinprogram_40',['CourseInProgram',['../struct_courses_in_programs_1_1_course_in_program.html',1,'CoursesInPrograms']]],
   ['coursename_41',['courseName',['../struct_course_report.html#a8059789d41ef11b7b5f1d577dca769bc',1,'CourseReport']]],
   ['coursereport_42',['CourseReport',['../struct_course_report.html',1,'']]],
   ['coursereport_2eh_43',['CourseReport.h',['../_course_report_8h.html',1,'']]],
   ['courses_44',['Courses',['../class_courses.html',1,'Courses'],['../struct_susi_database.html#a8c48dcd40ff17656bb8f56058750e887',1,'SusiDatabase::courses()'],['../class_courses.html#af387ddcb5cd5d6aa3c34eba1cf728f39',1,'Courses::courses()'],['../class_courses.html#a575c465450af137a41125b39e0b1fc0d',1,'Courses::Courses()']]],
-  ['courses_2ecpp_45',['courses.cpp',['../courses_8cpp.html',1,'']]],
-  ['courses_2ehpp_46',['courses.hpp',['../courses_8hpp.html',1,'']]],
+  ['courses_2ecpp_45',['Courses.cpp',['../_courses_8cpp.html',1,'']]],
+  ['courses_2ehpp_46',['Courses.hpp',['../_courses_8hpp.html',1,'']]],
   ['courses_5f_47',['courses_',['../class_courses_in_programs.html#a4faf9cf8ec5016e794a0ea9f7580cb1b',1,'CoursesInPrograms::courses_()'],['../class_enrollees_in_courses.html#af08d03b3f1066215f48351e4ad073907',1,'EnrolleesInCourses::courses_()']]],
   ['coursesinprograms_48',['CoursesInPrograms',['../class_courses_in_programs.html',1,'CoursesInPrograms'],['../class_courses_in_programs.html#a9e3878942687c485d9ce805fff7f995d',1,'CoursesInPrograms::CoursesInPrograms()'],['../struct_susi_database.html#a1495742ac1b460713ddc7bdcd3b6c771',1,'SusiDatabase::coursesInPrograms()'],['../class_courses_in_programs.html#a7913cfe46fe7d802b0367d212f851a53',1,'CoursesInPrograms::coursesInPrograms()']]],
-  ['coursesinprograms_2ecpp_49',['coursesInPrograms.cpp',['../courses_in_programs_8cpp.html',1,'']]],
-  ['coursesinprograms_2ehpp_50',['coursesInPrograms.hpp',['../courses_in_programs_8hpp.html',1,'']]]
+  ['coursesinprograms_2ecpp_49',['CoursesInPrograms.cpp',['../_courses_in_programs_8cpp.html',1,'']]],
+  ['coursesinprograms_2ehpp_50',['CoursesInPrograms.hpp',['../_courses_in_programs_8hpp.html',1,'']]]
 ];

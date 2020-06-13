@@ -1,12 +1,12 @@
 //
-//  coursesInPrograms.cpp
+//  CoursesInPrograms.cpp
 //  susi
 //
 //  Created by Marty Kostov on 23.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#include "coursesInPrograms.hpp"
+#include "CoursesInPrograms.hpp"
 
 
 CoursesInPrograms::CoursesInPrograms(Programs& programs, Courses& courses)

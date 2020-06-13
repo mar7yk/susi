@@ -1,13 +1,13 @@
 //
-//  courses.hpp
+//  Courses.hpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef courses_hpp
-#define courses_hpp
+#ifndef Courses_hpp
+#define Courses_hpp
 
 #include <stdio.h>
 
@@ -16,7 +16,7 @@
 
 #include "Table.h"
 
-#include "course.h"
+#include "Course.h"
 
 
 class Courses : public Table {
@@ -38,4 +38,4 @@ public:
     Course getByName(const String& name) const;
 };
 
-#endif /* courses_hpp */
+#endif /* Courses_hpp */

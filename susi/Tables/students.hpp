@@ -1,13 +1,13 @@
 //
-//  students.hpp
+//  Students.hpp
 //  susi
 //
 //  Created by Marty Kostov on 22.04.20.
 //  Copyright © 2020 Marty Kostov. All rights reserved.
 //
 
-#ifndef students_hpp
-#define students_hpp
+#ifndef Students_hpp
+#define Students_hpp
 
 #include <stdio.h>
 
@@ -16,8 +16,8 @@
 
 #include "Table.h"
 
-#include "programs.hpp"
-#include "student.h"
+#include "Programs.hpp"
+#include "Student.h"
 
 class Students : public Table {
     struct StudentData {
@@ -58,4 +58,4 @@ public:
     void update_average(const unsigned fn, const double average);
 };
 
-#endif /* students_hpp */
+#endif /* Students_hpp */

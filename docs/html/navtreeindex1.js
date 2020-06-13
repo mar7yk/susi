@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"functions_n.html":[0,3,0,10],
+"functions_o.html":[0,3,0,11],
+"functions_p.html":[0,3,0,12],
+"functions_q.html":[0,3,0,13],
+"functions_r.html":[0,3,0,14],
+"functions_rela.html":[0,3,3],
+"functions_s.html":[0,3,0,15],
+"functions_t.html":[0,3,0,16],
 "functions_u.html":[0,3,0,17],
 "functions_v.html":[0,3,0,18],
 "functions_vars.html":[0,3,2],
@@ -14,10 +22,6 @@ var NAVTREEINDEX1 =
 "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[1,0,0,4,0],
 "main_8cpp_source.html":[1,0,0,4],
 "pages.html":[],
-"programs_8cpp.html":[1,0,0,2,6],
-"programs_8cpp_source.html":[1,0,0,2,6],
-"programs_8hpp.html":[1,0,0,2,7],
-"programs_8hpp_source.html":[1,0,0,2,7],
 "string_8cpp.html":[1,0,0,0,0],
 "string_8cpp.html#a1a0290783b72b24a8e31648b058e5a31":[1,0,0,0,0,3],
 "string_8cpp.html#a1b6699f476b36b6c8d08f406ee4c4ab7":[1,0,0,0,0,7],
@@ -83,12 +87,6 @@ var NAVTREEINDEX1 =
 "struct_susi_database.html#a8ee9b7087373b36233d26728e84b7792":[0,0,11,0],
 "struct_susi_database.html#aa24de492b7a9422680812cf17cf48875":[0,0,11,7],
 "struct_susi_database.html#ae948dcb9b1c1b2fc861e5585be2adb69":[0,0,11,2],
-"student_8h.html":[1,0,0,1,3],
-"student_8h_source.html":[1,0,0,1,3],
-"students_8cpp.html":[1,0,0,2,8],
-"students_8cpp_source.html":[1,0,0,2,8],
-"students_8hpp.html":[1,0,0,2,9],
-"students_8hpp_source.html":[1,0,0,2,9],
 "vector_8h.html":[1,0,0,0,2],
 "vector_8h_source.html":[1,0,0,0,2]
 };
