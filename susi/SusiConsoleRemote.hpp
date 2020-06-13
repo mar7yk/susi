@@ -15,14 +15,17 @@
 
 #include "command.h"
 
+/// Служи за подаване на заявките към susi база данни през конзолзата
 class SusiConsoleRemote {
     SusiDatabaseQuerys* querys;
     
+    /// Показва информация за даден студент.
     void printStudent(const Student& student) const;
     
+    /// Преобразува string команда в enum command.
     Command getCommand(const String& sCommad) const;
     
-    void _help();
+    void _help() const;
     void _enroll();
     void _advance();
     void _change();
@@ -41,11 +44,12 @@ class SusiConsoleRemote {
     void _exit();
     void _upload();
     
+    /// Изпълнява команда по подаден стринг.
+    bool execut(const String& commad);
 public:
     SusiConsoleRemote(SusiDatabaseQuerys &susiDatabaseQuerys);
-
-    bool execut(const String& commad);
     
+    /// Стартира приложението.
     void run();
 };
 

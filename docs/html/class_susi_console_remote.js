@@ -1,0 +1,27 @@
+var class_susi_console_remote =
+[
+    [ "SusiConsoleRemote", "class_susi_console_remote.html#af310615bc878fd4eec727f1b97e0d962", null ],
+    [ "_addCourse", "class_susi_console_remote.html#ab35a713143f17316be505b6172f80643", null ],
+    [ "_addCourseToProgram", "class_susi_console_remote.html#a65f3769d501eac367c242dbe225d6a90", null ],
+    [ "_addgrade", "class_susi_console_remote.html#adf0d103e8f892b2d6eee17fe8cf99ff8", null ],
+    [ "_addProgram", "class_susi_console_remote.html#a656059e5200dbfb316ce2c4d21800408", null ],
+    [ "_advance", "class_susi_console_remote.html#ab7bfb7501a6f874434a7db02523a2175", null ],
+    [ "_change", "class_susi_console_remote.html#ad1e0b6a9823b1a3ef692bf51d93526a1", null ],
+    [ "_enroll", "class_susi_console_remote.html#adf9db5147fc0103a99fe5804dfcb3493", null ],
+    [ "_enrollin", "class_susi_console_remote.html#acf557527e4657c9be0bb21ec18ee2b33", null ],
+    [ "_exit", "class_susi_console_remote.html#acce68da69c5b11c2f42e70fc21dd78f5", null ],
+    [ "_graduate", "class_susi_console_remote.html#ac8bdc154f45fdd550f9d7732dea57a77", null ],
+    [ "_help", "class_susi_console_remote.html#a273c20ccee5299ac5b8f745d0151297f", null ],
+    [ "_interrupt", "class_susi_console_remote.html#aa9eabbcebf0ea4dc7a5266c109dacdab", null ],
+    [ "_print", "class_susi_console_remote.html#ab45dd9ff99cf181b2a682c0e50055adf", null ],
+    [ "_printall", "class_susi_console_remote.html#a712c031638445bd3117277a44ff1a109", null ],
+    [ "_protocol", "class_susi_console_remote.html#a2621e1c5c3036625efe68e5fdae0f3d1", null ],
+    [ "_report", "class_susi_console_remote.html#a4a5b4dfc575d652d3e090b01bfb83b36", null ],
+    [ "_resume", "class_susi_console_remote.html#a3d627ac6b1fc0912ce21e296f6adb6d7", null ],
+    [ "_upload", "class_susi_console_remote.html#ae98ddadb7b26d5f9db03cfa044957435", null ],
+    [ "execut", "class_susi_console_remote.html#afd508aec4dd613da7127f93ee4ef2171", null ],
+    [ "getCommand", "class_susi_console_remote.html#ad83f285020e29ee5519c779df57926b2", null ],
+    [ "printStudent", "class_susi_console_remote.html#abe7709fd2c47b52b889ead64ee71b287", null ],
+    [ "run", "class_susi_console_remote.html#a9450e23e6d289165c69090f3bc209dd9", null ],
+    [ "querys", "class_susi_console_remote.html#a771eda6409ce1f9a965a76110761063a", null ]
+];

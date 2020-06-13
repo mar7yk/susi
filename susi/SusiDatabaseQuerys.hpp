@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 
+/// Изпращащ заявки към зададена susi база нанни
 #include "SusiDatabase.h"
 
 class SusiDatabaseQuerys {
@@ -23,7 +24,7 @@ public:
     
     void upload(const String &folder);
     
-    void enroll(const unsigned int fn, const String &name, const String& program, const unsigned short gruop);
+    void enroll(const unsigned int fn, const String &name, const String& program, const unsigned short gruop) const;
     
     void advance(const unsigned int fn);
     
@@ -37,17 +38,17 @@ public:
     
     Student print(const unsigned int fn) const;
     
-    Vector<Student> printall(const String &program, const unsigned short gruop);
+    Vector<Student> printall(const String &program, const unsigned short gruop) const;
     
     void enrollin(const unsigned int fn, const String& courseName);
     
     void addgrade(const unsigned short fn, const String &courseName, const double grade);
     
-    Vector<StudentProtocol> protocol(const String &courseName);
+    Vector<StudentProtocol> protocol(const String &courseName) const;
     
-    Vector<CourseReport> report(const unsigned short fn);
+    Vector<CourseReport> report(const unsigned short fn) const;
     
-    double getAverage(const unsigned short fn);
+    double getAverage(const unsigned short fn) const;
     
     void addprogram(const String &program);
     

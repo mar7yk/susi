@@ -53,6 +53,10 @@ void Courses::save() const {
 }
 
 void Courses::add(const String &name, const bool optional) {
+    if (name == "") {
+        throw std::invalid_argument("Invalid argument");
+    }
+    
     Course newCourse = {nextID, name, optional};
     courses.push_back(newCourse);
     

@@ -57,6 +57,10 @@ void Students::save() const {
 void Students::add(const unsigned int fn, const String &name,
                    const size_t programID, const unsigned short gruop) {
     
+    if (fn == 0 || name == "" || gruop == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
+    
     StudentData newStudent = {fn, name, 1, programID, gruop, 1, 0};
     students.push_back(newStudent);
 }
@@ -108,6 +112,9 @@ Student Students::get(const StudentData &data) const {
 
 void Students::update_year(const unsigned int fn,
                            const unsigned short year) {
+    if (year == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
     
     for (size_t i = 0; i < students.size(); ++i) {
         if (students[i].fn == fn) {
@@ -120,6 +127,9 @@ void Students::update_year(const unsigned int fn,
 
 void Students::update_group(const unsigned int fn,
                             const unsigned short gruop) {
+    if (gruop == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
     
     for (size_t i = 0; i < students.size(); ++i) {
         if (students[i].fn == fn) {
@@ -131,6 +141,9 @@ void Students::update_group(const unsigned int fn,
 
 void Students::update_program(const unsigned int fn,
                               const size_t programID) {
+    if (programID == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
     
     for (size_t i = 0; i < students.size(); ++i) {
         if (students[i].fn == fn) {

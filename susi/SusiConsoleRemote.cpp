@@ -21,7 +21,7 @@ bool SusiConsoleRemote::execut(const String &newCommand) {
 
     Command command = getCommand(sCommand);
     
-//    try {
+    try {
         switch (command) {
             case Command::Invalid:
                 std::cout << "command not found: " << sCommand << std::endl;
@@ -86,9 +86,15 @@ bool SusiConsoleRemote::execut(const String &newCommand) {
                 break;
         }
         
-//    }  catch (std::exception& e) {
-//        std::cout << e.what() << std::endl;
-//    }
+    } catch (std::invalid_argument& e) {
+        std::cout << "Invalid input! " << std::endl;
+        
+    } catch (std::runtime_error& e) {
+        std::cout << e.what() << std::endl;
+        
+    } catch (std::exception& e) {
+        std::cout << "Error: unknown error" << std::endl;
+    }
     
     std::cout << std::endl;
 
@@ -308,7 +314,7 @@ void SusiConsoleRemote::_report() const {
     
     double average = querys->getAverage(fn);
     
-    std::cout << std::endl << "\taverage grade: " << average << std::endl;
+    std::cout << std::endl << "average grade: " << average << std::endl;
     
     
 }
@@ -354,10 +360,70 @@ void SusiConsoleRemote::_addCourseToProgram() {
 
 void SusiConsoleRemote::_exit() {
     querys->save();
+    std::cout << "Exiting the program..." << std::endl;
 }
 
-void SusiConsoleRemote::_help() {
+void SusiConsoleRemote::_help() const {
+    std::cout << "enroll <fn> <program> <group> <name>:" << std::endl;
+    std::cout << "\tenrollment of a student with name <name> in 1 course of <program> in <group> and with faculty number <fn>." << std::endl;
+    std::cout << std::endl;
     
+    std::cout << "advance <fn>:" << std::endl;
+    std::cout << "\tenrolls a student in the next course." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "change <fn>:" << std::endl;
+    std::cout << "\t<option> is one of program, group, year." << std::endl;
+    std::cout << "\tTransfers the student with faculty number <fn> to a new program, group group or year set by <value>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "graduate <fn>:" << std::endl;
+    std::cout << "\tMark the student as a graduate." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "interrupt <fn>:" << std::endl;
+    std::cout << "\tMarks the student with faculty number <fn> as interrupted." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "resume <fn>:" << std::endl;
+    std::cout << "\tRestores the student rights of the student with faculty number <fn>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "print <fn>:" << std::endl;
+    std::cout << "\tDisplays a report for the student with faculty number <fn>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "enrollin <fn> <course>:" << std::endl;
+    std::cout << "\tEnrolls the student with faculty number <fn> in the course named <course>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "addgrade <fn> <course> <grade>:" << std::endl;
+    std::cout << "\tAdds a <grade> for the <course> to the student with faculty number <fn>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "protocol <course>:" << std::endl;
+    std::cout << "\tDisplays protocols for all students enrolled in a <course>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "report <fn>:" << std::endl;
+    std::cout << "\tDisplays an academic report of a student's grades (list of all exams, relevant grades and student achievement)." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "addprogram <program>:" << std::endl;
+    std::cout << "\tRegisters a <program> in susi." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "addcourse <course>:" << std::endl;
+    std::cout << "\tRegisters a <course> in susi." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "addcoursetoprogram <program> <course> <year>:" << std::endl;
+    std::cout << "\tAdds <course> for <year> of <program>." << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "upload <folder>:" << std::endl;
+    std::cout << "\tUpdate the information in susi with that in <folder>." << std::endl;
+    std::cout << std::endl;
 }
 
 void SusiConsoleRemote::_upload() {

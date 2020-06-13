@@ -45,11 +45,19 @@ void EnrolleesInCourses::save() const {
 }
 
 void EnrolleesInCourses::add(const short unsigned studentFN, const short unsigned courseID) {
+    if (studentFN == 0 || courseID == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
+    
     EnrolledInCourse newEnrolled = {studentFN, courseID, 0};
     enrollees.push_back(newEnrolled);
 }
 
 void EnrolleesInCourses::update_grade(const unsigned short studentFN, const unsigned short courseID, const double grade) {
+    if (grade < 2 || grade > 6) {
+        throw std::invalid_argument("Invalid argument");
+    }
+    
     for (size_t i = 0; i < enrollees.size(); ++i) {
         if (enrollees[i].studentFN == studentFN && enrollees[i].courseID == courseID) {
             enrollees[i].grade = grade;

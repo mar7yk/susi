@@ -10,12 +10,11 @@
 #define coursesInPrograms_hpp
 
 #include <stdio.h>
-#include <fstream>
-
-#include "Table.h"
 
 #include "string.hpp"
 #include "vector.h"
+
+#include "Table.h"
 
 #include "courses.hpp"
 #include "programs.hpp"

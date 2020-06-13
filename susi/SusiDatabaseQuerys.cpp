@@ -24,7 +24,7 @@ void SusiDatabaseQuerys::upload(const String &folder) {
 }
 
 void SusiDatabaseQuerys::enroll(const unsigned int fn, const String &name,
-                                const String &program, const unsigned short gruop) {
+                                const String &program, const unsigned short gruop) const {
     
     Student student = dataBase->students.getByFN(fn);
     
@@ -218,7 +218,7 @@ Student SusiDatabaseQuerys::print(const unsigned int fn) const {
     return student;
 }
 
-Vector<Student> SusiDatabaseQuerys::printall(const String &program, const unsigned short gruop) { 
+Vector<Student> SusiDatabaseQuerys::printall(const String &program, const unsigned short gruop) const { 
     size_t programID = dataBase->programs.getIDByName(program);
     
     if (programID == 0) {
@@ -323,7 +323,7 @@ void SusiDatabaseQuerys::addgrade(const unsigned short fn, const String &courseN
     
 }
 
-Vector<StudentProtocol> SusiDatabaseQuerys::protocol(const String &courseName) {
+Vector<StudentProtocol> SusiDatabaseQuerys::protocol(const String &courseName) const {
     
     Course course = dataBase->courses.getByName(courseName);
     
@@ -336,7 +336,7 @@ Vector<StudentProtocol> SusiDatabaseQuerys::protocol(const String &courseName) {
     return protocol;
 }
 
-Vector<CourseReport> SusiDatabaseQuerys::report(const unsigned short fn) { 
+Vector<CourseReport> SusiDatabaseQuerys::report(const unsigned short fn) const { 
     Student student = dataBase->students.getByFN(fn);
     
     if (student.fn == 0) {
@@ -348,7 +348,7 @@ Vector<CourseReport> SusiDatabaseQuerys::report(const unsigned short fn) {
     return report;
 }
 
-double SusiDatabaseQuerys::getAverage(const unsigned short fn) { 
+double SusiDatabaseQuerys::getAverage(const unsigned short fn) const { 
     Student student = dataBase->students.getByFN(fn);
     
     return student.average;
@@ -395,29 +395,3 @@ void SusiDatabaseQuerys::addcoursetoprogram(const String &program, const String 
     
     dataBase->coursesInPrograms.add(course.ID, programID, year);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

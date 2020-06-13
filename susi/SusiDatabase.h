@@ -15,6 +15,7 @@
 #include "enrolleesInCourses.hpp"
 #include "coursesInPrograms.hpp"
 
+/// Структора от таблици
 struct SusiDatabase {
     Programs programs;
     Students students;
@@ -27,7 +28,7 @@ struct SusiDatabase {
         enrolleesInCourses(students, courses),
         coursesInPrograms(programs, courses) {}
     
-    void save() {
+    void save() const {
         programs.save();
         students.save();
         courses.save();

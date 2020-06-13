@@ -11,15 +11,13 @@
 
 #include <stdio.h>
 
-#include "Table.h"
-
 #include "string.hpp"
 #include "vector.h"
 
+#include "Table.h"
+
 #include "students.hpp"
 #include "courses.hpp"
-#include "programs.hpp"
-
 #include "StudentProtocol.h"
 #include "CourseReport.h"
 

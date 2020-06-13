@@ -57,6 +57,9 @@ void Programs::save() const {
 }
 
 void Programs::add(const String &name) {
+    if (name == "") {
+        throw std::invalid_argument("Invalid argument");
+    }
     Program newProgram = {nextID, name};
     programs.push_back(newProgram);
     

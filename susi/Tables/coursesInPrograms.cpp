@@ -49,6 +49,9 @@ void CoursesInPrograms::save() const {
 
 
 void CoursesInPrograms::add(const size_t courseID, const size_t programID, const short unsigned year) {
+    if (courseID == 0 || programID == 0 || year == 0) {
+        throw std::invalid_argument("Invalid argument");
+    }
     
     CourseInProgram newCourseInProgram = {courseID, programID, year};
     

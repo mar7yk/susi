@@ -10,13 +10,13 @@
 #define courses_hpp
 
 #include <stdio.h>
-#include <fstream>
+
+#include "string.hpp"
+#include "vector.h"
 
 #include "Table.h"
 
 #include "course.h"
-#include "string.hpp"
-#include "vector.h"
 
 
 class Courses : public Table {
