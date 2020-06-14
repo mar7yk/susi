@@ -153,7 +153,7 @@ void SusiConsoleRemote::_change() {
     
     querys->change(fn, option, value);
     
-    std::cout << "You successfully change student " << option << " of the student." << std::endl;
+    std::cout << "You successfully change " << option << " of the student." << std::endl;
 }
 
 void SusiConsoleRemote::_graduate() {

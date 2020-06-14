@@ -119,7 +119,7 @@ public:
     }
     
     T* end() {
-        return &arr[f_size - 1];
+        return &arr[f_size];
     }
     
     void pop_back() {

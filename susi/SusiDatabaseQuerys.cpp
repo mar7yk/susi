@@ -109,13 +109,15 @@ void SusiDatabaseQuerys::change(const unsigned int fn, const String &option, con
         }
         
         dataBase->students.update_program(fn, programID);
-        
-    } else if (option == "group") {
+        return;
+    }
+    if (option == "group") {
         unsigned short gruop = stoi(value);
         
         dataBase->students.update_group(fn, gruop);
-        
-    } else if (option == "year") {
+        return;
+    }
+    if (option == "year") {
         unsigned short year = stoi(value);
         
         Vector<CourseReport> report = dataBase->enrolleesInCourses.get_report_by_fn(fn);
@@ -137,7 +139,10 @@ void SusiDatabaseQuerys::change(const unsigned int fn, const String &option, con
         }
         
         advance(fn);
+        return;
     }
+    
+    throw std::runtime_error("Unknown option!");
 }
 
 void SusiDatabaseQuerys::graduate(const unsigned int fn) {
