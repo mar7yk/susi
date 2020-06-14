@@ -1,0 +1,33 @@
+digraph "EnrolleesInCourses::add"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="EnrolleesInCourses::add",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::advance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#ab98d107ab224dbe96ec904c937799f08",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SusiConsoleRemote::\l_advance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#ab7bfb7501a6f874434a7db02523a2175",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SusiConsoleRemote::\lexecut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#afd508aec4dd613da7127f93ee4ef2171",tooltip="Изпълнява команда по подаден стринг."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SusiConsoleRemote::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#a9450e23e6d289165c69090f3bc209dd9",tooltip="Стартира приложението."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SusiDatabaseQuerys\l::change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#a9e9639f560420e220b53c61d7a317717",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SusiConsoleRemote::\l_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#ad1e0b6a9823b1a3ef692bf51d93526a1",tooltip=" "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SusiDatabaseQuerys\l::enroll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#af3f10d73cbe771832d0be57be66bedee",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="SusiConsoleRemote::\l_enroll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#adf9db5147fc0103a99fe5804dfcb3493",tooltip=" "];
+  Node10 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="SusiDatabaseQuerys\l::enrollin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#aa36cef8143ae2e216147bd2149cab5bd",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="SusiConsoleRemote::\l_enrollin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#acf557527e4657c9be0bb21ec18ee2b33",tooltip=" "];
+  Node12 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

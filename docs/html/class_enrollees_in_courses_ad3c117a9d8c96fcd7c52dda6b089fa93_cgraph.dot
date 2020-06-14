@@ -1,0 +1,12 @@
+digraph "EnrolleesInCourses::EnrolleesInCourses"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="EnrolleesInCourses\l::EnrolleesInCourses",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="EnrolleesInCourses\l::load",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_enrollees_in_courses.html#acfec5267920b15619e75dc6eae6b9edf",tooltip="Десериализира таблица по подаден път на файл"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="String::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a5d05517bcc8df58bc5eff312e3926b61",tooltip=" "];
+}

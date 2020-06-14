@@ -1,0 +1,12 @@
+digraph "Vector::back"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Vector::back",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Courses::load",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#a372561121d6897ace4123cd7c1d9f91f",tooltip="Десериализира таблица по подаден път на файл"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Courses::Courses",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#a575c465450af137a41125b39e0b1fc0d",tooltip=" "];
+}

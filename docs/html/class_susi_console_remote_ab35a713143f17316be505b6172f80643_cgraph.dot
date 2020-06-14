@@ -1,0 +1,20 @@
+digraph "SusiConsoleRemote::_addCourse"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SusiConsoleRemote::\l_addCourse",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::addcourse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#aedabf92da3309b2fb524fd535765f951",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Courses::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#abb37973fd2cba8cfebff20828d635925",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Vector::push_back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#aafe4fd2dc987ac473b52ef757aa7a202",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Courses::getByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#abf9e43df17c17dc597e618e49111ec86",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Vector::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a9b439586cd10cb45d002ca9d6e3db43c",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="strtok",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#a20b41aab198d591f95d6eb4f49b4ad66",tooltip=" "];
+}

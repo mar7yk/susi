@@ -1,0 +1,24 @@
+digraph "SusiConsoleRemote::_addCourseToProgram"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SusiConsoleRemote::\l_addCourseToProgram",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::addcoursetoprogram",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#a883d6fad99b3f1032ea6154c2e71de0f",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CoursesInPrograms::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses_in_programs.html#a9cfb7bbc7da2b790a55522c4cb2d11f3",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Courses::getByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#abf9e43df17c17dc597e618e49111ec86",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Vector::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a9b439586cd10cb45d002ca9d6e3db43c",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Programs::getIDByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_programs.html#a38465cc0fe94193aa430608787393143",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CoursesInPrograms::\lisAdded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses_in_programs.html#aeeaba908214b3731f691bad907aef20d",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="stoi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#ad6c1e4e71b0db829d771e8fc13f4eaca",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="strtok",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#a20b41aab198d591f95d6eb4f49b4ad66",tooltip=" "];
+}

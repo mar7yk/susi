@@ -1,0 +1,12 @@
+digraph "getline"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="getline",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="String::getfromStreamTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a07ecdb07f683392a066de2549b4dfe8c",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="String::changeSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a63fe4c7be65bfc5f72e1d60ac45c557d",tooltip=" "];
+}

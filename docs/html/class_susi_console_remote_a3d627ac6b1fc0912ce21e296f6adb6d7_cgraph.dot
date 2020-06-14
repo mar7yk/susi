@@ -1,0 +1,22 @@
+digraph "SusiConsoleRemote::_resume"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SusiConsoleRemote::\l_resume",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::resume",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#a1d25e51ad9dcd77ae487bcf81207d148",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Students::getByFN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a50fca4894a5b8d62fbb36ee52eac83df",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Students::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a6c30eb2eef875efaa8d72aa9cdfca39a",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Programs::getNameByID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_programs.html#a7dc1bbdc990578657c6fda63c78f720d",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Students::update_status",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#ad08d1bff46931473e4739f02f09ec6f1",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="stoi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#ad6c1e4e71b0db829d771e8fc13f4eaca",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="strtok",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#a20b41aab198d591f95d6eb4f49b4ad66",tooltip=" "];
+}

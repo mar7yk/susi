@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "susi", "index.html", [
+    [ "susi Documentation", "index.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -50,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_course_8h.html",
-"functions_n.html"
+"functions_l.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

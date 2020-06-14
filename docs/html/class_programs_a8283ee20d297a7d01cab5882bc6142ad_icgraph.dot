@@ -1,0 +1,21 @@
+digraph "Programs::save"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Programs::save",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Сериализира таблица"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabase::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_susi_database.html#a2b42cb2146d9faf0348cf102d1940134",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SusiDatabaseQuerys\l::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#a3fd2d92d732b7844c092a1ba35a9af9c",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SusiConsoleRemote::\l_exit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#acce68da69c5b11c2f42e70fc21dd78f5",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SusiConsoleRemote::\lexecut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#afd508aec4dd613da7127f93ee4ef2171",tooltip="Изпълнява команда по подаден стринг."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SusiConsoleRemote::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#a9450e23e6d289165c69090f3bc209dd9",tooltip="Стартира приложението."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

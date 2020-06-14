@@ -1,0 +1,52 @@
+digraph "SusiDatabaseQuerys::change"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SusiDatabaseQuerys\l::change",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::advance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#ab98d107ab224dbe96ec904c937799f08",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="EnrolleesInCourses::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_enrollees_in_courses.html#ac3cccc6034d8a679e46139be2fd157a7",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Students::getByFN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a50fca4894a5b8d62fbb36ee52eac83df",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Students::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a6c30eb2eef875efaa8d72aa9cdfca39a",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Programs::getNameByID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_programs.html#a7dc1bbdc990578657c6fda63c78f720d",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Programs::getIDByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_programs.html#a38465cc0fe94193aa430608787393143",tooltip=" "];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CoursesInPrograms::\lgetMandatoryForYear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses_in_programs.html#a019270bce2393fac09a64c28f80e45fd",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Courses::getByID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#a803737a79669500e773e7092d18e8541",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Vector::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a9b439586cd10cb45d002ca9d6e3db43c",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Vector::push_back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#aafe4fd2dc987ac473b52ef757aa7a202",tooltip=" "];
+  Node2 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Students::update_year",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#ae66d7d89c1e9b685ba54c49637bb6d57",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="EnrolleesInCourses\l::get_report_by_fn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_enrollees_in_courses.html#ae09c5f5bf792e1751ac91df1021efc7f",tooltip=" "];
+  Node13 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="CoursesInPrograms::\lgetMandatoryToYear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses_in_programs.html#af269b9c4a6ac14b9f1a55e44aedd19c0",tooltip=" "];
+  Node14 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="SusiDatabaseQuerys\l::report",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#ab58b79c5d4ce4c7a2a51876b97592b81",tooltip=" "];
+  Node15 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="stoi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#ad6c1e4e71b0db829d771e8fc13f4eaca",tooltip=" "];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Students::update_group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a096b9ddb81e902c97a5530490ffbf958",tooltip=" "];
+  Node1 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Students::update_program",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a53e1b22139e98acf71d29a6b96ba9c73",tooltip=" "];
+}

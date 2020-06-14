@@ -20,7 +20,7 @@ struct SusiDatabase {
     Programs programs;
     Students students;
     Courses courses;
-    EnrolleesInCourses enrolleesInCourses;
+    EnrolleesInCourses enrolleesInCourses = {students, courses};
     CoursesInPrograms coursesInPrograms;
     
     SusiDatabase() :

@@ -1,0 +1,18 @@
+digraph "EnrolleesInCourses::get_protocol"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="EnrolleesInCourses\l::get_protocol",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SusiDatabaseQuerys\l::protocol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_database_querys.html#a2ead3636bca3e4bf74bdbfbe32f9016a",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SusiConsoleRemote::\l_protocol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#a2621e1c5c3036625efe68e5fdae0f3d1",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SusiConsoleRemote::\lexecut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#afd508aec4dd613da7127f93ee4ef2171",tooltip="Изпълнява команда по подаден стринг."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SusiConsoleRemote::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_susi_console_remote.html#a9450e23e6d289165c69090f3bc209dd9",tooltip="Стартира приложението."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+}

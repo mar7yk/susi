@@ -1,0 +1,20 @@
+digraph "Courses::load"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Courses::load",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Десериализира таблица по подаден път на файл"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Vector::back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a675083e6c242d1aec17db69165103c80",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="String::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a5d05517bcc8df58bc5eff312e3926b61",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="getline",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8cpp.html#ad042f5252c2de09cc55b5dd4d5525acf",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="String::getfromStreamTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a07ecdb07f683392a066de2549b4dfe8c",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="String::changeSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a63fe4c7be65bfc5f72e1d60ac45c557d",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Vector::resize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#ac2cbe796e03c440c4bf2844a01dd12e8",tooltip=" "];
+}

@@ -1,0 +1,26 @@
+digraph "SusiDatabase::save"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SusiDatabase::save",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Courses::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses.html#a7263686062ecab0bdf80e4620e44bee7",tooltip="Сериализира таблица"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="String::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_string.html#a5d05517bcc8df58bc5eff312e3926b61",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Vector::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a9b439586cd10cb45d002ca9d6e3db43c",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Programs::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_programs.html#a8283ee20d297a7d01cab5882bc6142ad",tooltip="Сериализира таблица"];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CoursesInPrograms::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_courses_in_programs.html#a5ea4ba66dddc19f6c7f80d37484b19e7",tooltip="Сериализира таблица"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="EnrolleesInCourses\l::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_enrollees_in_courses.html#a6a935169ce67cf601d2bc32d0bc62681",tooltip="Сериализира таблица"];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Students::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_students.html#a182cb9257453eec99b4829e16ea7d133",tooltip="Сериализира таблица"];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
